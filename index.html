@@ -9,17 +9,20 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#060a10;--s1:#0b1119;--s2:#0f1520;--s3:#131d2a;--s4:#192233;
-  --bd:rgba(255,255,255,.065);--bd2:rgba(255,255,255,.11);
-  --t1:#dde6f5;--t2:#7d93b8;--t3:#3d526e;
+  --bd:rgba(255,255,255,.08);--bd2:rgba(255,255,255,.15);
+  /* Contrast Improvements: Made text colors significantly brighter */
+  --t1:#ffffff; 
+  --t2:#cbd5e1; 
+  --t3:#94a3b8; 
   --blue:#3d9eff;--indigo:#7c8fff;--cyan:#1fd3ee;--green:#1fc966;
   --amber:#f5a524;--red:#f04040;--purple:#a94ff7;--pink:#e8609a;
   --fn:'Plus Jakarta Sans',sans-serif;--mo:'JetBrains Mono',monospace;
   --r:13px;--rs:8px;
 }
-html{font-size:14px}
+html{font-size:15px} /* Increased base font size */
 body{font-family:var(--fn);background:var(--bg);color:var(--t1);min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(61,158,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(61,158,255,.022) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
-body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(61,158,255,.055) 0%,transparent 68%);top:-150px;right:-150px;pointer-events:none}
+body::before{content:'';position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(61,158,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(61,158,255,.025) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(61,158,255,.06) 0%,transparent 68%);top:-150px;right:-150px;pointer-events:none}
 .app{position:relative;z-index:1;display:flex;height:100vh;overflow:hidden}
 
 /* SIDEBAR */
@@ -27,44 +30,46 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
 .sb::-webkit-scrollbar{width:3px}.sb::-webkit-scrollbar-thumb{background:var(--bd2)}
 .sb-logo{display:flex;align-items:center;gap:11px;padding:18px 16px 15px;border-bottom:1px solid var(--bd)}
 .sb-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3d9eff,#7c8fff);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 0 18px rgba(61,158,255,.32)}
-.sb-name{font-size:13px;font-weight:700;color:var(--t1);line-height:1.25}
-.sb-name small{display:block;font-size:10px;font-weight:400;color:var(--t3)}
+.sb-name{font-size:14px;font-weight:700;color:var(--t1);line-height:1.25}
+.sb-name small{display:block;font-size:11px;font-weight:500;color:var(--t2)}
 .sb-sec{padding:12px 8px 4px}
-.sb-lbl{font-size:9px;font-weight:700;color:var(--t3);letter-spacing:1.4px;text-transform:uppercase;padding:0 8px;margin-bottom:4px}
-.nav{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:var(--rs);cursor:pointer;color:var(--t2);font-size:12.5px;font-weight:500;transition:all .15s;border:1px solid transparent;user-select:none}
+.sb-lbl{font-size:10px;font-weight:700;color:var(--t3);letter-spacing:1.4px;text-transform:uppercase;padding:0 8px;margin-bottom:6px}
+.nav{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:var(--rs);cursor:pointer;color:var(--t2);font-size:13px;font-weight:600;transition:all .15s;border:1px solid transparent;user-select:none;margin-bottom:2px}
 .nav:hover{background:var(--s3);color:var(--t1)}
 .nav.on{background:rgba(61,158,255,.11);color:#3d9eff;border-color:rgba(61,158,255,.18)}
-.nav svg{width:15px;height:15px;flex-shrink:0;opacity:.7}
+.nav svg{width:16px;height:16px;flex-shrink:0;opacity:.8}
 .nav.on svg{opacity:1}
-.sb-foot{margin-top:auto;padding:13px 14px;border-top:1px solid var(--bd)}
+.sb-foot{margin-top:auto;padding:15px 14px;border-top:1px solid var(--bd)}
 .sync-row{display:flex;align-items:flex-start;gap:9px}
-.sdot{width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:3px}
+.sdot{width:9px;height:9px;border-radius:50%;background:var(--amber);flex-shrink:0;margin-top:3px}
 .sdot.live{background:var(--green);animation:blink 2s ease-in-out infinite}
 .sdot.err{background:var(--red)}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-.slbl{font-size:11px;font-weight:700;color:var(--t2)}
-.stime{font-size:9.5px;color:var(--t3);font-family:var(--mo);margin-top:2px}
-.snext{font-size:9px;color:var(--t3);margin-top:1px}
+.slbl{font-size:12px;font-weight:700;color:var(--t1)}
+.stime{font-size:10.5px;color:var(--t2);font-family:var(--mo);margin-top:2px}
+.snext{font-size:10px;color:var(--t3);margin-top:1px;font-weight:500}
+.btn-dl{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:9px;background:linear-gradient(180deg,rgba(61,158,255,.15),rgba(61,158,255,.05));border:1px solid rgba(61,158,255,.25);border-radius:var(--rs);color:#fff;font-size:12px;font-weight:700;text-decoration:none;transition:all .2s;margin-bottom:15px;}
+.btn-dl:hover{background:rgba(61,158,255,.2);border-color:rgba(61,158,255,.4)}
 
 /* MAIN */
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
-.topbar{height:52px;background:var(--s1);border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;padding:0 22px;flex-shrink:0}
-.pg-t{font-size:14.5px;font-weight:700;color:var(--t1);line-height:1.2}
-.pg-s{font-size:10.5px;color:var(--t3);margin-top:1px}
-.tb-r{display:flex;align-items:center;gap:8px}
-.chip{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:20px;font-size:10.5px;font-weight:500;font-family:var(--mo);white-space:nowrap}
+.topbar{height:58px;background:var(--s1);border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;padding:0 24px;flex-shrink:0}
+.pg-t{font-size:16px;font-weight:800;color:var(--t1);line-height:1.2}
+.pg-s{font-size:11.5px;color:var(--t2);margin-top:2px;font-weight:500}
+.tb-r{display:flex;align-items:center;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:11.5px;font-weight:600;font-family:var(--mo);white-space:nowrap}
 .ch-bl{background:rgba(61,158,255,.1);color:var(--blue);border:1px solid rgba(61,158,255,.18)}
 .ch-gr{background:rgba(31,201,102,.09);color:var(--green);border:1px solid rgba(31,201,102,.18)}
 .ch-am{background:rgba(245,165,36,.09);color:var(--amber);border:1px solid rgba(245,165,36,.18)}
 .ch-rd{background:rgba(240,64,64,.09);color:var(--red);border:1px solid rgba(240,64,64,.18)}
-.rbtn{display:flex;align-items:center;gap:5px;padding:5px 13px;background:rgba(61,158,255,.09);border:1px solid rgba(61,158,255,.22);border-radius:var(--rs);color:var(--blue);font-size:11.5px;font-weight:600;cursor:pointer;font-family:var(--fn);transition:all .15s}
-.rbtn:hover{background:rgba(61,158,255,.16)}
+.rbtn{display:flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(61,158,255,.1);border:1px solid rgba(61,158,255,.25);border-radius:var(--rs);color:var(--blue);font-size:12.5px;font-weight:700;cursor:pointer;font-family:var(--fn);transition:all .15s}
+.rbtn:hover{background:rgba(61,158,255,.2)}
 .rbtn svg{transition:transform .5s}
 .rbtn.spin svg{animation:rot .7s linear infinite}
 @keyframes rot{to{transform:rotate(360deg)}}
-.scroll{flex:1;overflow-y:auto;padding:18px 22px}
-.scroll::-webkit-scrollbar{width:4px}
-.scroll::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px}
+.scroll{flex:1;overflow-y:auto;padding:22px 24px}
+.scroll::-webkit-scrollbar{width:6px}
+.scroll::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:3px}
 
 /* SECTIONS */
 .sec{display:none}
@@ -72,152 +77,175 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
 @keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 
 /* KPI */
-.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:11px;margin-bottom:16px}
-.kpi{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:14px 15px;position:relative;overflow:hidden;transition:border-color .2s,transform .15s}
-.kpi:hover{border-color:var(--bd2);transform:translateY(-1px)}
-.kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--kl,linear-gradient(90deg,#3d9eff,#7c8fff))}
-.kl{font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px}
-.kv{font-size:25px;font-weight:800;color:var(--kc,var(--t1));line-height:1;letter-spacing:-.5px}
-.kh{font-size:10px;color:var(--t3);margin-top:5px}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:18px}
+.kpi{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:16px;position:relative;overflow:hidden;transition:border-color .2s,transform .15s}
+.kpi:hover{border-color:var(--bd2);transform:translateY(-2px)}
+.kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--kl,linear-gradient(90deg,#3d9eff,#7c8fff))}
+.kl{font-size:11px;font-weight:700;color:var(--t3);letter-spacing:.7px;text-transform:uppercase;margin-bottom:8px}
+.kv{font-size:28px;font-weight:800;color:var(--kc,var(--t1));line-height:1;letter-spacing:-.5px}
+.kh{font-size:11px;color:var(--t2);margin-top:6px;font-weight:500}
 
 /* CARD */
-.card{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:16px 18px;margin-bottom:14px}
-.ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.ct{font-size:12.5px;font-weight:700;color:var(--t1);display:flex;align-items:center;gap:7px}
-.cd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.card{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:18px 20px;margin-bottom:16px}
+.ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.ct{font-size:14px;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:8px}
+.cd{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 
 /* GRIDS */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
-.g6040{display:grid;grid-template-columns:3fr 2fr;gap:14px;margin-bottom:14px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
+.g6040{display:grid;grid-template-columns:3fr 2fr;gap:16px;margin-bottom:16px}
 
 /* BADGES */
-.b{display:inline-flex;align-items:center;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600;white-space:nowrap}
-.b-r{background:rgba(240,64,64,.1);color:#f04040;border:1px solid rgba(240,64,64,.22)}
-.b-o{background:rgba(245,165,36,.1);color:#f5a524;border:1px solid rgba(245,165,36,.22)}
-.b-y{background:rgba(234,179,8,.1);color:#eab308;border:1px solid rgba(234,179,8,.22)}
-.b-g{background:rgba(31,201,102,.09);color:#1fc966;border:1px solid rgba(31,201,102,.18)}
-.b-bl{background:rgba(61,158,255,.09);color:#3d9eff;border:1px solid rgba(61,158,255,.18)}
-.b-in{background:rgba(124,143,255,.09);color:#7c8fff;border:1px solid rgba(124,143,255,.18)}
-.b-gy{background:rgba(100,116,139,.1);color:#94a3b8;border:1px solid rgba(100,116,139,.18)}
-.b-pu{background:rgba(169,79,247,.09);color:#a94ff7;border:1px solid rgba(169,79,247,.18)}
+.b{display:inline-flex;align-items:center;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap}
+.b-r{background:rgba(240,64,64,.12);color:#ff6b6b;border:1px solid rgba(240,64,64,.25)}
+.b-o{background:rgba(245,165,36,.12);color:#facc15;border:1px solid rgba(245,165,36,.25)}
+.b-y{background:rgba(234,179,8,.12);color:#fde047;border:1px solid rgba(234,179,8,.25)}
+.b-g{background:rgba(31,201,102,.12);color:#4ade80;border:1px solid rgba(31,201,102,.25)}
+.b-bl{background:rgba(61,158,255,.12);color:#60a5fa;border:1px solid rgba(61,158,255,.25)}
+.b-in{background:rgba(124,143,255,.12);color:#a5b4fc;border:1px solid rgba(124,143,255,.25)}
+.b-gy{background:rgba(148,163,184,.12);color:#cbd5e1;border:1px solid rgba(148,163,184,.25)}
+.b-pu{background:rgba(169,79,247,.12);color:#c084fc;border:1px solid rgba(169,79,247,.25)}
 
 /* TABLE */
 .tbl{width:100%;border-collapse:collapse}
-.tbl th{text-align:left;font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.8px;text-transform:uppercase;padding:0 11px 9px;border-bottom:1px solid var(--bd)}
-.tbl td{padding:9px 11px;border-bottom:1px solid rgba(255,255,255,.035);font-size:12px;vertical-align:middle}
+.tbl th{text-align:left;font-size:11px;font-weight:700;color:var(--t3);letter-spacing:.8px;text-transform:uppercase;padding:0 12px 10px;border-bottom:1px solid var(--bd)}
+.tbl td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px;vertical-align:middle}
 .tbl tr:last-child td{border-bottom:none}
-.tbl tr:hover td{background:rgba(61,158,255,.022)}
-.tid{font-family:var(--mo);font-size:10.5px;color:var(--t3)}
-.ttl{font-weight:500;color:var(--t1);max-width:280px;line-height:1.4}
-.tsb{font-size:10px;color:var(--t3);margin-top:3px}
-.tnm{font-size:11px;color:var(--t2)}
+.tbl tr:hover td{background:rgba(61,158,255,.03)}
+.tid{font-family:var(--mo);font-size:12px;color:var(--t2);font-weight:500}
+.ttl{font-weight:600;color:var(--t1);max-width:280px;line-height:1.4}
+.tsb{font-size:11px;color:var(--t2);margin-top:4px}
+.tnm{font-size:12.5px;color:var(--t2)}
 
 /* PRIORITY BARS */
-.pbr{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.pbrl{width:78px;flex-shrink:0}
-.pbrt{flex:1;height:5px;background:var(--s4);border-radius:3px;overflow:hidden}
+.pbr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.pbrl{width:85px;flex-shrink:0;font-weight:600;font-size:12px}
+.pbrt{flex:1;height:6px;background:var(--s4);border-radius:3px;overflow:hidden}
 .pbrf{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
-.pbrn{font-size:12px;font-weight:700;width:20px;text-align:right}
+.pbrn{font-size:13px;font-weight:800;width:24px;text-align:right}
 
 /* DONUT */
-.dw{display:flex;align-items:center;gap:18px}
-.dl{flex:1;display:flex;flex-direction:column;gap:8px}
-.dlr{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--t2)}
-.dls{width:8px;height:8px;border-radius:2px;flex-shrink:0}
-.dln{margin-left:auto;font-weight:700;color:var(--t1);font-size:12px}
+.dw{display:flex;align-items:center;gap:20px}
+.dl{flex:1;display:flex;flex-direction:column;gap:10px}
+.dlr{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t2);font-weight:500}
+.dls{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.dln{margin-left:auto;font-weight:800;color:var(--t1);font-size:14px}
 
 /* GAUGES */
-.gauges-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:4px}
-.gauge-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:var(--s3);border:1px solid var(--bd);border-radius:var(--rs);transition:border-color .2s}
+.gauges-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px}
+.gauge-item{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 10px;background:var(--s3);border:1px solid var(--bd);border-radius:var(--rs);transition:border-color .2s}
 .gauge-item:hover{border-color:var(--bd2)}
-.gauge-lbl{font-size:10.5px;font-weight:600;color:var(--t3);text-align:center}
-.gauge-val{font-size:10px;color:var(--t2);font-family:var(--mo);text-align:center}
+.gauge-lbl{font-size:11.5px;font-weight:700;color:var(--t3);text-align:center}
+.gauge-val{font-size:11px;color:var(--t2);font-family:var(--mo);text-align:center;font-weight:600}
 
 /* WEEKLY */
-.wkg{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-.wk{background:var(--s3);border:1px solid var(--bd);border-radius:var(--rs);padding:10px 8px;text-align:center}
-.wk.cur{border-color:rgba(245,165,36,.4);background:rgba(245,165,36,.05)}
-.wk.dim{opacity:.32}
-.wklb{font-size:9px;font-weight:600;color:var(--t3);letter-spacing:.7px;text-transform:uppercase;margin-bottom:6px}
-.wkn{font-size:18px;font-weight:800;color:var(--t1);letter-spacing:-.5px;line-height:1}
-.wkcp{font-size:10px;color:var(--cyan);margin-top:3px}
-.wkbar{height:3px;background:var(--bd);border-radius:2px;margin-top:8px;overflow:hidden}
+.wkg{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.wk{background:var(--s3);border:1px solid var(--bd);border-radius:var(--rs);padding:12px 10px;text-align:center}
+.wk.cur{border-color:rgba(245,165,36,.5);background:rgba(245,165,36,.06)}
+.wk.dim{opacity:.4}
+.wklb{font-size:10px;font-weight:700;color:var(--t3);letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px}
+.wkn{font-size:20px;font-weight:800;color:var(--t1);letter-spacing:-.5px;line-height:1}
+.wkcp{font-size:11px;color:var(--cyan);margin-top:4px;font-weight:600}
+.wkbar{height:4px;background:var(--bd);border-radius:2px;margin-top:10px;overflow:hidden}
 .wkfill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--indigo))}
 
 /* PILLS */
-.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.pill{background:var(--s3);border:1px solid var(--bd);border-radius:var(--rs);padding:9px 13px;min-width:80px}
-.pv{font-size:17px;font-weight:800;color:var(--t1);line-height:1;letter-spacing:-.5px}
-.pl{font-size:9.5px;color:var(--t3);margin-top:4px;font-weight:500}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.pill{background:var(--s3);border:1px solid var(--bd);border-radius:var(--rs);padding:10px 14px;min-width:90px}
+.pv{font-size:18px;font-weight:800;color:var(--t1);line-height:1;letter-spacing:-.5px}
+.pl{font-size:10.5px;color:var(--t2);margin-top:5px;font-weight:600}
 
 /* TIMELINE */
-.tl{position:relative;padding-left:22px}
-.tl::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:1.5px;background:linear-gradient(to bottom,rgba(61,158,255,.5),rgba(124,143,255,.08))}
-.tli{position:relative;margin-bottom:16px}
-.tld{position:absolute;left:-18px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--s2);border:2px solid var(--t3)}
-.tld.done{background:var(--green);border-color:var(--green);box-shadow:0 0 8px rgba(31,201,102,.35)}
-.tld.act{background:var(--blue);border-color:var(--blue);box-shadow:0 0 8px rgba(61,158,255,.45)}
-.tlh{font-size:12px;font-weight:600;color:var(--t1);display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-.tls{font-size:11px;color:var(--t3);margin-top:2px}
+.tl{position:relative;padding-left:24px}
+.tl::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,rgba(61,158,255,.6),rgba(124,143,255,.1))}
+.tli{position:relative;margin-bottom:18px}
+.tld{position:absolute;left:-21px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--s2);border:2.5px solid var(--t3)}
+.tld.done{background:var(--green);border-color:var(--green);box-shadow:0 0 10px rgba(31,201,102,.4)}
+.tld.act{background:var(--blue);border-color:var(--blue);box-shadow:0 0 10px rgba(61,158,255,.5)}
+.tlh{font-size:13px;font-weight:700;color:var(--t1);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tls{font-size:12px;color:var(--t2);margin-top:4px;font-weight:500;line-height:1.4}
 
 /* STAT ROW */
-.sr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--bd);font-size:12px}
+.sr{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--bd);font-size:13px}
 .sr:last-child{border-bottom:none}
-.srk{color:var(--t3)}.srv{font-weight:600;color:var(--t1)}
+.srk{color:var(--t3);font-weight:600}.srv{font-weight:700;color:var(--t1)}
 
 /* RING */
-.ring{display:flex;flex-direction:column;align-items:center;gap:5px}
-.rl{font-size:10px;font-weight:600;color:var(--t3);text-align:center}
+.ring{display:flex;flex-direction:column;align-items:center;gap:6px}
+.rl{font-size:11px;font-weight:700;color:var(--t3);text-align:center}
 
 /* MONTHLY CARDS */
-.mt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:10px;margin-bottom:16px}
-.mt-card{background:var(--s3);border:1px solid var(--bd);border-radius:var(--rs);padding:12px 13px;transition:border-color .2s,transform .15s}
-.mt-card:hover{border-color:var(--bd2);transform:translateY(-1px)}
-.mt-card.cur-m{border-color:rgba(245,165,36,.35);background:rgba(245,165,36,.04)}
-.mt-date{font-size:10px;font-weight:600;color:var(--t3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
-.mt-tot{font-size:20px;font-weight:800;color:var(--t1);line-height:1;letter-spacing:-.5px}
-.mt-sub{font-size:9.5px;color:var(--t3);margin-top:3px}
-.mt-bar{margin-top:9px;height:4px;background:var(--s4);border-radius:2px;overflow:hidden}
-.mt-fill{height:100%;border-radius:2px;transition:width 1s}
-.mt-cats{display:flex;flex-direction:column;gap:3px;margin-top:8px}
-.mt-cat{display:flex;align-items:center;justify-content:space-between;font-size:9.5px}
-.mt-ck{color:var(--t3)}.mt-cv{font-weight:600;font-family:var(--mo)}
+.mt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:18px}
+.mt-card{background:var(--s3);border:1px solid var(--bd);border-radius:var(--rs);padding:14px 15px;transition:border-color .2s,transform .15s}
+.mt-card:hover{border-color:var(--bd2);transform:translateY(-2px)}
+.mt-card.cur-m{border-color:rgba(245,165,36,.4);background:rgba(245,165,36,.05)}
+.mt-date{font-size:11px;font-weight:700;color:var(--t3);letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}
+.mt-tot{font-size:22px;font-weight:800;color:var(--t1);line-height:1;letter-spacing:-.5px}
+.mt-sub{font-size:10.5px;color:var(--t2);margin-top:4px;font-weight:600}
+.mt-bar{margin-top:10px;height:5px;background:var(--s4);border-radius:3px;overflow:hidden}
+.mt-fill{height:100%;border-radius:3px;transition:width 1s}
+.mt-cats{display:flex;flex-direction:column;gap:4px;margin-top:10px}
+.mt-cat{display:flex;align-items:center;justify-content:space-between;font-size:10.5px}
+.mt-ck{color:var(--t3);font-weight:600}.mt-cv{font-weight:700;font-family:var(--mo)}
 
-/* BAR CHART */
-.bch{display:flex;gap:6px;align-items:flex-end;overflow-x:auto;padding-bottom:4px}
-.bch::-webkit-scrollbar{height:3px}.bch::-webkit-scrollbar-thumb{background:var(--bd2)}
-.bc-col{display:flex;flex-direction:column;align-items:center;gap:4px;flex-shrink:0;min-width:38px}
-.bc-bars{display:flex;gap:2px;align-items:flex-end}
-.bc-bar{border-radius:3px 3px 0 0;min-height:4px;display:flex;align-items:flex-start;justify-content:center;padding-top:2px}
-.bc-bar span{font-size:7px;color:rgba(255,255,255,.8);font-weight:700;line-height:1}
+/* BAR CHART WITH CUSTOM HOVER TOOLTIPS */
+.bch{display:flex;gap:8px;align-items:flex-end;overflow-x:auto;padding-bottom:6px;padding-top:20px;}
+.bch::-webkit-scrollbar{height:4px}.bch::-webkit-scrollbar-thumb{background:var(--bd2)}
+.bc-col{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;min-width:42px}
+.bc-bars{display:flex;gap:3px;align-items:flex-end}
+.bc-bar{border-radius:4px 4px 0 0;min-height:4px;position:relative;cursor:pointer;transition:opacity .2s}
+.bc-bar:hover{opacity:0.8}
+/* Dynamic Tooltip CSS */
+.bc-bar::after {
+  content: attr(data-val);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #060a10;
+  padding: 5px 9px;
+  border-radius: 4px;
+  font-size: 11.5px;
+  font-weight: 800;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+  z-index: 10;
+  margin-bottom: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-family: var(--fn);
+}
+.bc-bar:hover::after { opacity: 1; transform: translateX(-50%) translateY(-2px); }
+
 .bc-line{height:1px;background:var(--bd);width:100%}
-.bc-lbl{font-size:8.5px;color:var(--t3);text-align:center;line-height:1.3}
+.bc-lbl{font-size:10.5px;color:var(--t2);text-align:center;line-height:1.4;font-weight:600}
 
 /* MISC */
-.info-bar{background:rgba(61,158,255,.08);border:1px solid rgba(61,158,255,.2);border-radius:var(--rs);padding:9px 14px;font-size:11.5px;color:var(--blue);margin-bottom:14px;line-height:1.6;display:none}
-.err-bar{background:rgba(240,64,64,.08);border:1px solid rgba(240,64,64,.22);border-radius:var(--rs);padding:9px 14px;font-size:11.5px;color:#f04040;margin-bottom:14px;line-height:1.6;display:none}
-.ldr{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .5s}
+.info-bar{background:rgba(61,158,255,.08);border:1px solid rgba(61,158,255,.2);border-radius:var(--rs);padding:12px 16px;font-size:13px;color:var(--blue);margin-bottom:16px;line-height:1.6;display:none;font-weight:500}
+.err-bar{background:rgba(240,64,64,.08);border:1px solid rgba(240,64,64,.22);border-radius:var(--rs);padding:12px 16px;font-size:13px;color:#ff6b6b;margin-bottom:16px;line-height:1.6;display:none;font-weight:500}
+.ldr{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .5s}
 .ldr.gone{opacity:0;pointer-events:none}
-.ldr-ring{width:36px;height:36px;border:2.5px solid var(--bd2);border-top-color:var(--blue);border-radius:50%;animation:rot .8s linear infinite}
-.ldr-t{font-size:12.5px;color:var(--t3);text-align:center;max-width:300px;line-height:1.6}
-.pgbar-wrap{display:flex;align-items:center;gap:10px}
-.pgbar-bg{flex:1;height:5px;background:var(--s4);border-radius:3px;overflow:hidden}
+.ldr-ring{width:40px;height:40px;border:3px solid var(--bd2);border-top-color:var(--blue);border-radius:50%;animation:rot .8s linear infinite}
+.ldr-t{font-size:14px;color:var(--t2);text-align:center;max-width:300px;line-height:1.6;font-weight:600}
+.pgbar-wrap{display:flex;align-items:center;gap:12px}
+.pgbar-bg{flex:1;height:6px;background:var(--s4);border-radius:3px;overflow:hidden}
 .pgbar-fill{height:100%;border-radius:3px}
 
-@media(max-width:1000px){.sb{width:190px}.g2,.g6040,.g3{grid-template-columns:1fr}.wkg{grid-template-columns:repeat(3,1fr)}.kgrid{grid-template-columns:repeat(2,1fr)}.gauges-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.sb{display:none}.scroll{padding:12px}.kv{font-size:20px}.gauges-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1000px){.sb{width:200px}.g2,.g6040,.g3{grid-template-columns:1fr}.wkg{grid-template-columns:repeat(3,1fr)}.kgrid{grid-template-columns:repeat(2,1fr)}.gauges-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.sb{display:none}.scroll{padding:16px}.kv{font-size:22px}.gauges-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 
 <div class="ldr" id="ldr">
   <div class="ldr-ring"></div>
-  <div class="ldr-t" id="ldrt">Connecting to Google Sheets…<br><span style="font-size:10px;opacity:.6">Syncing live data…</span></div>
+  <div class="ldr-t" id="ldrt">Connecting to Google Sheets…<br><span style="font-size:11.5px;opacity:.7">Syncing live data…</span></div>
 </div>
 
 <div class="app">
-  <!-- SIDEBAR -->
   <aside class="sb">
     <div class="sb-logo">
       <div class="sb-mark">C</div>
@@ -226,27 +254,32 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
     <div class="sb-sec">
       <div class="sb-lbl">Dashboards</div>
       <div class="nav on" onclick="goto(this,'ov')">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1.5"/><rect x="9" y="1.5" width="5.5" height="5.5" rx="1.5"/><rect x="1.5" y="9" width="5.5" height="5.5" rx="1.5"/><rect x="9" y="9" width="5.5" height="5.5" rx="1.5"/></svg>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1.5"/><rect x="9" y="1.5" width="5.5" height="5.5" rx="1.5"/><rect x="1.5" y="9" width="5.5" height="5.5" rx="1.5"/><rect x="9" y="9" width="5.5" height="5.5" rx="1.5"/></svg>
         Overview
       </div>
       <div class="nav" onclick="goto(this,'tasks')">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 4h12M2 8h9M2 12h11"/></svg>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4h12M2 8h9M2 12h11"/></svg>
         Task Tracker
       </div>
       <div class="nav" onclick="goto(this,'monthly')">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><path d="M5 1.5v2M11 1.5v2M1.5 6.5h13"/></svg>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1.5" y="2.5" width="13" height="11" rx="1.5"/><path d="M5 1.5v2M11 1.5v2M1.5 6.5h13"/></svg>
         Monthly Track
       </div>
       <div class="nav" onclick="goto(this,'hours')">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="5.5"/><path d="M8 5.5V8l1.5 1.5"/></svg>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="5.5"/><path d="M8 5.5V8l1.5 1.5"/></svg>
         Hours Track
       </div>
       <div class="nav" onclick="goto(this,'upgrade')">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2.5v9M4.5 7l3.5-4.5 3.5 4.5M3 13h10"/></svg>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2.5v9M4.5 7l3.5-4.5 3.5 4.5M3 13h10"/></svg>
         Magento Upgrade
       </div>
     </div>
     <div class="sb-foot">
+      <a href="https://docs.google.com/presentation/d/1nYyfa9xeBhG2IAX7pTBtHMkT_e_Gk0UQohMUEh99uy0/edit?usp=sharing" target="_blank" class="btn-dl">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 11v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2"/><path d="M4 7l4 4 4-4"/><path d="M8 11V1"/></svg>
+        Download Presentation
+      </a>
+
       <div class="sync-row">
         <div class="sdot" id="sdot"></div>
         <div>
@@ -258,7 +291,6 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
     </div>
   </aside>
 
-  <!-- MAIN -->
   <div class="main">
     <div class="topbar">
       <div>
@@ -269,7 +301,7 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
         <span class="chip ch-bl" id="datechip">Today</span>
         <span class="chip ch-am" id="dchip">● Syncing</span>
         <button class="rbtn" id="rbtn" onclick="loadAll(true)">
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 8a7 7 0 1 0 7-7 7 7 0 0 0-4.95 2.05L1 5"/><path d="M1 1v4h4"/></svg>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 8a7 7 0 1 0 7-7 7 7 0 0 0-4.95 2.05L1 5"/><path d="M1 1v4h4"/></svg>
           Refresh Now
         </button>
       </div>
@@ -279,7 +311,6 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
       <div class="info-bar" id="infobar"></div>
       <div class="err-bar" id="errbar"></div>
 
-      <!-- OVERVIEW -->
       <div class="sec on" id="ov">
         <div class="kgrid" id="ov-kpis"></div>
         <div class="g6040">
@@ -292,20 +323,19 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
             <div id="ov-pbars"></div>
           </div>
         </div>
-        <!-- COMBINED CARD: Allocated vs Used + Gauges -->
         <div class="card">
           <div class="ch">
             <div class="ct"><div class="cd" style="background:var(--green)"></div>This Month — Allocated vs Used</div>
             <span id="ov-month-badge" class="b b-bl">—</span>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px" id="ov-month-nums"></div>
-          <div style="font-size:10px;color:var(--t3);margin-bottom:6px;display:flex;justify-content:space-between" id="ov-util-lbl"><span>Utilization</span><span>—</span></div>
-          <div style="height:6px;background:var(--s4);border-radius:3px;overflow:hidden;margin-bottom:20px">
-            <div id="ov-util-bar" style="height:100%;border-radius:3px;background:linear-gradient(90deg,#3d9eff,#1fd3ee);transition:width 1s;width:0%"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px" id="ov-month-nums"></div>
+          <div id="ov-util-lbl" style="font-size:11px;color:var(--t3);margin-bottom:8px;display:flex;justify-content:space-between;font-weight:700"><span>Utilization</span><span>—</span></div>
+          <div style="height:8px;background:var(--s4);border-radius:4px;overflow:hidden;margin-bottom:24px">
+            <div id="ov-util-bar" style="height:100%;border-radius:4px;background:linear-gradient(90deg,#3d9eff,#1fd3ee);transition:width 1s;width:0%"></div>
           </div>
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
             <div style="height:1px;flex:1;background:var(--bd)"></div>
-            <span style="font-size:9.5px;font-weight:700;color:var(--t3);letter-spacing:.8px;text-transform:uppercase;white-space:nowrap">Hours Track — Weekly Breakdown</span>
+            <span style="font-size:11px;font-weight:800;color:var(--t3);letter-spacing:1px;text-transform:uppercase;white-space:nowrap">Hours Track — Weekly Breakdown</span>
             <div style="height:1px;flex:1;background:var(--bd)"></div>
           </div>
           <div class="gauges-grid" id="ov-gauges"></div>
@@ -322,19 +352,18 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
         </div>
       </div>
 
-      <!-- TASKS -->
       <div class="sec" id="tasks">
         <div class="kgrid" id="tk-kpis"></div>
         <div class="card">
           <div class="ch">
             <div class="ct"><div class="cd" style="background:var(--blue)"></div>All Active Tasks</div>
-            <div style="display:flex;gap:8px;align-items:center">
+            <div style="display:flex;gap:10px;align-items:center">
               <span id="tk-badge" class="b b-bl">—</span>
-              <select id="tk-pf" onchange="filterTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t2);font-size:11px;padding:3px 8px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none">
+              <select id="tk-pf" onchange="filterTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t2);font-size:12px;padding:5px 10px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
                 <option value="all">All Priorities</option><option value="show">Showstopper</option>
                 <option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option>
               </select>
-              <select id="tk-sf" onchange="filterTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t2);font-size:11px;padding:3px 8px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none">
+              <select id="tk-sf" onchange="filterTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t2);font-size:12px;padding:5px 10px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
                 <option value="all">All Statuses</option><option value="open">Open</option>
                 <option value="review">Reviewing</option><option value="hold">On-Hold</option>
                 <option value="await">Await Inputs</option><option value="third">Third Party</option>
@@ -350,56 +379,52 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
         </div>
       </div>
 
-      <!-- MONTHLY TRACK -->
       <div class="sec" id="monthly">
         <div class="kgrid" id="mt-kpis"></div>
         <div class="card">
           <div class="ch">
             <div class="ct"><div class="cd" style="background:var(--cyan)"></div>Allocated vs Consumed — All Months</div>
-            <div style="display:flex;gap:10px">
-              <div style="display:flex;gap:5px;align-items:center;font-size:10px;color:var(--t3)"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#3d9eff,#7c8fff)"></div>Allocated</div>
-              <div style="display:flex;gap:5px;align-items:center;font-size:10px;color:var(--t3)"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#1fc966,#1fd3ee)"></div>Consumed</div>
-              <div style="display:flex;gap:5px;align-items:center;font-size:10px;color:var(--t3)"><div style="width:8px;height:8px;border-radius:2px;background:rgba(245,165,36,.15);border:1px dashed rgba(245,165,36,.5)"></div>Remaining</div>
+            <div style="display:flex;gap:12px">
+              <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--t2);font-weight:600"><div style="width:10px;height:10px;border-radius:2px;background:linear-gradient(135deg,#3d9eff,#7c8fff)"></div>Allocated</div>
+              <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--t2);font-weight:600"><div style="width:10px;height:10px;border-radius:2px;background:linear-gradient(135deg,#1fc966,#1fd3ee)"></div>Consumed</div>
+              <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--t2);font-weight:600"><div style="width:10px;height:10px;border-radius:2px;background:rgba(245,165,36,.15);border:1px dashed rgba(245,165,36,.6)"></div>Remaining</div>
             </div>
           </div>
-          <div class="bch" id="mt-chart" style="height:140px"></div>
+          <div class="bch" id="mt-chart" style="height:150px"></div>
         </div>
         <div class="card">
           <div class="ch">
             <div class="ct"><div class="cd" style="background:var(--pink)"></div>Hours by Category — Monthly</div>
-            <div style="display:flex;gap:10px">
-              <div style="display:flex;gap:5px;align-items:center;font-size:10px;color:var(--t3)"><div style="width:8px;height:8px;border-radius:2px;background:#f04040"></div>Bug Fix</div>
-              <div style="display:flex;gap:5px;align-items:center;font-size:10px;color:var(--t3)"><div style="width:8px;height:8px;border-radius:2px;background:#3d9eff"></div>Enhancement</div>
-              <div style="display:flex;gap:5px;align-items:center;font-size:10px;color:var(--t3)"><div style="width:8px;height:8px;border-radius:2px;background:#a94ff7"></div>Mgn Upgrade</div>
+            <div style="display:flex;gap:12px">
+              <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--t2);font-weight:600"><div style="width:10px;height:10px;border-radius:2px;background:#f04040"></div>Bug Fix</div>
+              <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--t2);font-weight:600"><div style="width:10px;height:10px;border-radius:2px;background:#3d9eff"></div>Enhancement</div>
+              <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--t2);font-weight:600"><div style="width:10px;height:10px;border-radius:2px;background:#a94ff7"></div>Mgn Upgrade</div>
             </div>
           </div>
-          <div class="bch" id="mt-cat-chart" style="height:130px"></div>
+          <div class="bch" id="mt-cat-chart" style="height:140px"></div>
         </div>
-        <div style="font-size:11px;font-weight:700;color:var(--t3);letter-spacing:.8px;text-transform:uppercase;margin-bottom:12px">Monthly Detail Cards</div>
+        <div style="font-size:12px;font-weight:800;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px">Monthly Detail Cards</div>
         <div class="mt-grid" id="mt-cards"></div>
       </div>
 
-      <!-- HOURS TRACK -->
       <div class="sec" id="hours">
         <div class="kgrid" id="hr-kpis"></div>
         <div class="card">
           <div class="ch">
             <div class="ct"><div class="cd" style="background:var(--cyan)"></div>Monthly Hours — Crosby vs CP</div>
-            <div style="display:flex;gap:10px">
-              <div style="display:flex;gap:5px;align-items:center;font-size:10px;color:var(--t3)"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#3d9eff,#7c8fff)"></div>Crosby</div>
-              <div style="display:flex;gap:5px;align-items:center;font-size:10px;color:var(--t3)"><div style="width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#1fd3ee,#1fc966)"></div>CP</div>
-              <div style="display:flex;gap:5px;align-items:center;font-size:10px;color:var(--t3)"><div style="width:8px;height:8px;border-radius:2px;background:rgba(61,158,255,.12);border:1px dashed rgba(61,158,255,.5)"></div>Remaining</div>
+            <div style="display:flex;gap:12px">
+              <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--t2);font-weight:600"><div style="width:10px;height:10px;border-radius:2px;background:linear-gradient(135deg,#3d9eff,#7c8fff)"></div>Crosby</div>
+              <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--t2);font-weight:600"><div style="width:10px;height:10px;border-radius:2px;background:linear-gradient(135deg,#1fd3ee,#1fc966)"></div>CP</div>
+              <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--t2);font-weight:600"><div style="width:10px;height:10px;border-radius:2px;background:rgba(61,158,255,.12);border:1px dashed rgba(61,158,255,.6)"></div>Remaining</div>
             </div>
           </div>
-          <div class="bch" id="hr-chart" style="height:130px"></div>
+          <div class="bch" id="hr-chart" style="height:140px"></div>
         </div>
         <div id="hr-months"></div>
       </div>
 
-      <!-- MAGENTO UPGRADE (DYNAMIC) -->
       <div class="sec" id="upgrade">
-        <!-- Will be dynamically injected by JS -->
-      </div>
+        </div>
 
     </div>
   </div>
@@ -436,7 +461,7 @@ function parseCSV(txt) {
   });
 }
 
-/* ── Fetch Engine: Direct Fetch without Preflight ── */
+/* ── Fetch Engine ── */
 async function fetchCSV(rawUrl) {
   const separator = rawUrl.includes('?') ? '&' : '?';
   const cacheBustUrl = `${rawUrl}${separator}_t=${Date.now()}`;
@@ -486,31 +511,19 @@ function sBadge(s) {
 function gaugeRing(pct, col, sz=72) {
   const r = sz/2 - 8; const c = 2*Math.PI*r; const off = c*(1-pct/100);
   return `<svg width="${sz}" height="${sz}" viewBox="0 0 ${sz} ${sz}">
-    <circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="6"/>
+    <circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="6"/>
     <circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="none" stroke="${col}" stroke-width="6"
       stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"
       transform="rotate(-90 ${sz/2} ${sz/2})" stroke-linecap="round"/>
     <text x="${sz/2}" y="${sz/2+4}" text-anchor="middle" fill="${col}"
-      font-family="Plus Jakarta Sans" font-size="11" font-weight="800">${pct}%</text>
-  </svg>`;
-}
-
-function phaseRing(pct, col) {
-  const r=26; const c=2*Math.PI*r; const off=c*(1-pct/100);
-  return `<svg width="68" height="68" viewBox="0 0 68 68">
-    <circle cx="34" cy="34" r="${r}" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="5.5"/>
-    <circle cx="34" cy="34" r="${r}" fill="none" stroke="${col}" stroke-width="5.5"
-      stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"
-      transform="rotate(-90 34 34)" stroke-linecap="round"/>
-    <text x="34" y="38" text-anchor="middle" fill="${col}"
-      font-family="Plus Jakarta Sans" font-size="10.5" font-weight="800">${pct}%</text>
+      font-family="Plus Jakarta Sans" font-size="12" font-weight="800">${pct}%</text>
   </svg>`;
 }
 
 function kpi(l,v,h,kc,kl,fs) {
   return `<div class="kpi" style="--kl:${kl};--kc:${kc}">
     <div class="kl">${l}</div>
-    <div class="kv" style="font-size:${fs||'25px'}">${v}</div>
+    <div class="kv" style="font-size:${fs||'28px'}">${v}</div>
     <div class="kh">${h}</div>
   </div>`;
 }
@@ -582,7 +595,6 @@ async function loadMagento() {
   const rows = await fetchCSV(URL_MAGENTO);
   if (rows.length < 2) return;
   
-  // Try to figure out column indices based on exact sheet headers
   const headers = rows[0].map(h => h.toLowerCase().trim());
   const idxWeek  = headers.findIndex(h => h === 'week');
   const idxPhase = headers.findIndex(h => h === 'phase');
@@ -592,7 +604,6 @@ async function loadMagento() {
   const idxCons  = headers.findIndex(h => h.includes('hours utilized') || h.includes('utilized'));
   const idxStat  = headers.findIndex(h => h === 'status');
 
-  // Fallbacks ensuring absolute accuracy based on the screenshot
   const cW = idxWeek > -1 ? idxWeek : 0;
   const cP = idxPhase > -1 ? idxPhase : 1;
   const cT = idxTask > -1 ? idxTask : 2;
@@ -606,11 +617,9 @@ async function loadMagento() {
 
   for (let i = 1; i < rows.length; i++) {
     const r = rows[i];
-    // Skip empty rows
     if (!r || r.length < 3) continue;
 
     const taskName = (r[cT] || '').trim();
-    // Strictly ignore the "Grand Total Hours" row at the bottom
     if (!taskName || taskName.toLowerCase().includes('total')) continue; 
 
     const a = nt(r[cA]);
@@ -624,7 +633,6 @@ async function loadMagento() {
     tasks.push({ week: w, phase: p, title: taskName, date: (r[cD] || '—').trim(), alloc: a, cons: c, status: s });
   }
 
-  // Group strictly into phases
   const phaseMap = {};
   tasks.forEach(tk => {
     if (!phaseMap[tk.phase]) phaseMap[tk.phase] = { name: tk.phase, tasks: [], alloc: 0, cons: 0, done: 0 };
@@ -659,35 +667,36 @@ function renderOv() {
   const budget = curA.allocated || 125;
 
   $('ov-kpis').innerHTML = [
-    kpi('Show Stoppers', p.showstopper, 'Critical blockers', '#f04040', 'linear-gradient(90deg,#f04040,#f87171)'),
-    kpi('High Priority',  p.high,        'Needs attention',  '#f5a524', 'linear-gradient(90deg,#f5a524,#fbbf24)'),
-    kpi('Medium Priority',p.medium,      'In progress',      '#eab308', 'linear-gradient(90deg,#eab308,#f5a524)'),
-    kpi('Low Priority',   p.low,         'Backlog items',    '#1fc966', 'linear-gradient(90deg,#1fc966,#1fd3ee)'),
+    kpi('Show Stoppers', p.showstopper, 'Critical blockers', '#ff6b6b', 'linear-gradient(90deg,#f04040,#f87171)'),
+    kpi('High Priority',  p.high,        'Needs attention',  '#facc15', 'linear-gradient(90deg,#f5a524,#fbbf24)'),
+    kpi('Medium Priority',p.medium,      'In progress',      '#fde047', 'linear-gradient(90deg,#eab308,#f5a524)'),
+    kpi('Low Priority',   p.low,         'Backlog items',    '#4ade80', 'linear-gradient(90deg,#1fc966,#1fd3ee)'),
     kpi('Total Tasks',    t.length,      'Active tasks',     'var(--t1)','linear-gradient(90deg,#3d9eff,#7c8fff)'),
-    kpi('Hrs Remaining',  rem,           'This month · '+curA.date, rem>30?'#1fc966':rem>10?'#f5a524':'#f04040', 'linear-gradient(90deg,#7c8fff,#a94ff7)'),
+    kpi('Hrs Remaining',  rem,           'This month · '+curA.date, rem>30?'#4ade80':rem>10?'#facc15':'#ff6b6b', 'linear-gradient(90deg,#7c8fff,#a94ff7)'),
   ].join('');
 
-  // Donut
+  // Donut Tooltips via Title
   const COLS = {'Open':'#3d9eff','Reviewing':'#7c8fff','On-Hold':'#64748b','Await Inputs':'#f5a524','Third Party':'#a94ff7'};
   const sc = {}; t.forEach(tk => { const s=(tk.status||'').trim(); sc[s]=(sc[s]||0)+1; });
   const tot = t.length||1; const C = 2*Math.PI*38; let off = 0;
   const arcs = Object.keys(sc).map(s => {
     const f=sc[s]/tot*C; const g=C-f;
     const a=`<circle cx="50" cy="50" r="38" fill="none" stroke="${COLS[s]||'#64748b'}" stroke-width="11"
-      stroke-dasharray="${f.toFixed(2)} ${g.toFixed(2)}" stroke-dashoffset="${(-off).toFixed(2)}" transform="rotate(-90 50 50)"/>`;
+      stroke-dasharray="${f.toFixed(2)} ${g.toFixed(2)}" stroke-dashoffset="${(-off).toFixed(2)}" transform="rotate(-90 50 50)">
+      <title>${s}: ${sc[s]} Tasks</title>
+      </circle>`;
     off+=f; return a;
   }).join('');
   const legs = Object.keys(sc).map(s =>
     `<div class="dlr"><div class="dls" style="background:${COLS[s]||'#64748b'}"></div>${s}<span class="dln">${sc[s]}</span></div>`
   ).join('');
-  $('ov-donut').innerHTML = `<svg width="100" height="100" viewBox="0 0 100 100" style="flex-shrink:0">
-    <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,.04)" stroke-width="11"/>
+  $('ov-donut').innerHTML = `<svg width="105" height="105" viewBox="0 0 100 100" style="flex-shrink:0; cursor:pointer">
+    <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="11"/>
     ${arcs}
-    <text x="50" y="46" text-anchor="middle" fill="var(--t1)" font-family="Plus Jakarta Sans" font-size="16" font-weight="800">${tot}</text>
-    <text x="50" y="59" text-anchor="middle" fill="var(--t3)" font-family="Plus Jakarta Sans" font-size="7.5" font-weight="600">TASKS</text>
+    <text x="50" y="45" text-anchor="middle" fill="var(--t1)" font-family="Plus Jakarta Sans" font-size="18" font-weight="800">${tot}</text>
+    <text x="50" y="60" text-anchor="middle" fill="var(--t3)" font-family="Plus Jakarta Sans" font-size="8.5" font-weight="700">TASKS</text>
   </svg><div class="dl">${legs}</div>`;
 
-  // Priority bars
   const mx = Math.max(p.showstopper, p.high, p.medium, p.low, 1);
   $('ov-pbars').innerHTML = [
     {l:'Showstop',v:p.showstopper,c:'#f04040',bc:'b-r'},
@@ -695,38 +704,38 @@ function renderOv() {
     {l:'Medium',  v:p.medium,     c:'#eab308',bc:'b-y'},
     {l:'Low',     v:p.low,        c:'#1fc966',bc:'b-g'},
   ].map(x => `<div class="pbr">
-    <div class="pbrl"><span class="b ${x.bc}" style="font-size:9.5px">${x.l}</span></div>
+    <div class="pbrl"><span class="b ${x.bc}" style="font-size:10.5px">${x.l}</span></div>
     <div class="pbrt"><div class="pbrf" style="width:${(x.v/mx*100).toFixed(0)}%;background:${x.c}"></div></div>
     <div class="pbrn" style="color:${x.c}">${x.v}</div>
   </div>`).join('');
 
   $('ov-month-badge').textContent = curA.date;
   $('ov-month-nums').innerHTML = `
-    <div style="text-align:center;padding:12px 8px;background:var(--s3);border-radius:var(--rs);border:1px solid var(--bd)">
-      <div style="font-size:28px;font-weight:800;color:var(--t1);letter-spacing:-.5px;line-height:1">${curA.allocated}</div>
-      <div style="font-size:10px;color:var(--t3);margin-top:5px;font-weight:600">Allocated</div>
+    <div style="text-align:center;padding:15px 10px;background:var(--s3);border-radius:var(--rs);border:1px solid var(--bd)">
+      <div style="font-size:32px;font-weight:800;color:var(--t1);letter-spacing:-.5px;line-height:1">${curA.allocated}</div>
+      <div style="font-size:11.5px;color:var(--t3);margin-top:6px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">Allocated</div>
     </div>
-    <div style="text-align:center;padding:12px 8px;background:var(--s3);border-radius:var(--rs);border:1px solid var(--bd)">
-      <div style="font-size:28px;font-weight:800;color:var(--cyan);letter-spacing:-.5px;line-height:1">${curA.consumed}</div>
-      <div style="font-size:10px;color:var(--t3);margin-top:5px;font-weight:600">Consumed</div>
+    <div style="text-align:center;padding:15px 10px;background:var(--s3);border-radius:var(--rs);border:1px solid var(--bd)">
+      <div style="font-size:32px;font-weight:800;color:var(--cyan);letter-spacing:-.5px;line-height:1">${curA.consumed}</div>
+      <div style="font-size:11.5px;color:var(--t3);margin-top:6px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">Consumed</div>
     </div>
-    <div style="text-align:center;padding:12px 8px;background:var(--s3);border-radius:var(--rs);border:1px solid var(--bd)">
-      <div style="font-size:28px;font-weight:800;color:${rem>30?'#1fc966':rem>10?'#f5a524':'#f04040'};letter-spacing:-.5px;line-height:1">${rem}</div>
-      <div style="font-size:10px;color:var(--t3);margin-top:5px;font-weight:600">Remaining</div>
+    <div style="text-align:center;padding:15px 10px;background:var(--s3);border-radius:var(--rs);border:1px solid var(--bd)">
+      <div style="font-size:32px;font-weight:800;color:${rem>30?'#4ade80':rem>10?'#facc15':'#ff6b6b'};letter-spacing:-.5px;line-height:1">${rem}</div>
+      <div style="font-size:11.5px;color:var(--t3);margin-top:6px;font-weight:700;text-transform:uppercase;letter-spacing:.5px">Remaining</div>
     </div>`;
 
-  $('ov-util-lbl').innerHTML = `<span>${curA.date} utilization</span><span style="color:var(--t2);font-weight:600">${pct}%</span>`;
+  $('ov-util-lbl').innerHTML = `<span>${curA.date} Utilization</span><span style="color:var(--t1);font-weight:800;font-size:13px">${pct}%</span>`;
   $('ov-util-bar').style.width = pct + '%';
 
   const cUsed=curH.total.crosby, cpUsed=curH.total.cp;
   const cLeft=curH.remaining.crosby, cpLeft=curH.remaining.cp;
   $('ov-gauges').innerHTML = [
-    {l:'Crosby Used', v:`${cUsed}/${budget}`,  pct:Math.round(cUsed/budget*100),  c:'#3d9eff'},
-    {l:'CP Used',     v:`${cpUsed}/${budget}`, pct:Math.round(cpUsed/budget*100), c:'#1fd3ee'},
-    {l:'Crosby Left', v:`${cLeft}/${budget}`,  pct:Math.round(cLeft/budget*100),  c:'#f5a524'},
-    {l:'CP Left',     v:`${cpLeft}/${budget}`, pct:Math.round(cpLeft/budget*100), c:'#a94ff7'},
+    {l:'Crosby Used', v:`${cUsed}/${budget}`,  pct:Math.round(cUsed/budget*100),  c:'#60a5fa'},
+    {l:'CP Used',     v:`${cpUsed}/${budget}`, pct:Math.round(cpUsed/budget*100), c:'#22d3ee'},
+    {l:'Crosby Left', v:`${cLeft}/${budget}`,  pct:Math.round(cLeft/budget*100),  c:'#facc15'},
+    {l:'CP Left',     v:`${cpLeft}/${budget}`, pct:Math.round(cpLeft/budget*100), c:'#c084fc'},
   ].map(g => `<div class="gauge-item">
-    ${gaugeRing(g.pct, g.c, 72)}
+    ${gaugeRing(g.pct, g.c, 80)}
     <div class="gauge-lbl">${g.l}</div>
     <div class="gauge-val">${g.v}</div>
   </div>`).join('');
@@ -737,13 +746,12 @@ function renderOv() {
     {l:'Bug Fix',     v:curCat.bugfix||0,       c:'#f04040'},
     {l:'Enhancement', v:curCat.enhancement||0,  c:'#3d9eff'},
     {l:'Mgn Upgrade', v:curCat.magento||0,      c:'#a94ff7'},
-  ].map(x => `<div class="pbr" style="margin-bottom:12px">
-    <div class="pbrl" style="width:92px;font-size:11px;color:var(--t2)">${x.l}</div>
+  ].map(x => `<div class="pbr" style="margin-bottom:14px">
+    <div class="pbrl" style="width:100px;font-size:12px;color:var(--t2)">${x.l}</div>
     <div class="pbrt"><div class="pbrf" style="width:${(x.v/catTot*100).toFixed(0)}%;background:${x.c}"></div></div>
-    <div class="pbrn" style="color:${x.c};width:28px">${x.v}</div>
+    <div class="pbrn" style="color:${x.c};width:30px">${x.v}</div>
   </div>`).join('');
 
-  // Overview Upgrade Snippet (Dynamic now!)
   const m = D.magento;
   const mPct = m.totalAlloc ? Math.round((m.totalCons / m.totalAlloc) * 100) : 0;
   $('ov-upg').innerHTML = `
@@ -752,9 +760,9 @@ function renderOv() {
     <div class="sr"><span class="srk">Consumed Hrs</span><span class="srv" style="color:var(--indigo)">${m.totalCons} Hrs</span></div>
     <div class="sr"><span class="srk">Total Phases</span><span class="b b-bl">${m.phases.length} Phases</span></div>
     <div class="sr"><span class="srk">Progress</span>
-      <div class="pgbar-wrap" style="width:110px">
+      <div class="pgbar-wrap" style="width:120px">
         <div class="pgbar-bg"><div class="pgbar-fill" style="width:${mPct}%;background:linear-gradient(90deg,#7c8fff,#3d9eff)"></div></div>
-        <span style="font-size:11.5px;font-weight:700;color:var(--t1);white-space:nowrap">${mPct}%</span>
+        <span style="font-size:12.5px;font-weight:800;color:var(--t1);white-space:nowrap">${mPct}%</span>
       </div>
     </div>`;
 }
@@ -768,8 +776,8 @@ function renderTasks() {
   const rev=t.filter(x=>(x.status||'').toLowerCase().includes('review')).length;
   $('tk-kpis').innerHTML = [
     kpi('Total Tasks',   t.length,      'All tasks',       'var(--t1)', 'linear-gradient(90deg,#3d9eff,#7c8fff)'),
-    kpi('Show Stoppers', p.showstopper, 'Critical',        '#f04040',   'linear-gradient(90deg,#f04040,#f87171)'),
-    kpi('High Priority', p.high,        'Urgent',          '#f5a524',   'linear-gradient(90deg,#f5a524,#fbbf24)'),
+    kpi('Show Stoppers', p.showstopper, 'Critical',        '#ff6b6b',   'linear-gradient(90deg,#f04040,#f87171)'),
+    kpi('High Priority', p.high,        'Urgent',          '#facc15',   'linear-gradient(90deg,#f5a524,#fbbf24)'),
     kpi('Open',          open,          'In progress',     'var(--blue)','linear-gradient(90deg,#3d9eff,#1fd3ee)'),
     kpi('Reviewing',     rev,           'Awaiting review', 'var(--indigo)','linear-gradient(90deg,#7c8fff,#a94ff7)'),
   ].join('');
@@ -791,12 +799,12 @@ function filterTasks() {
     <td><span class="tid">#${tk.id}</span></td>
     <td><div class="ttl">${tk.title}</div><div class="tsb">${tk.module||'B2B'} · ${tk.type||'—'}</div></td>
     <td class="tnm">${tk.assignedTo||'—'}</td>
-    <td class="tnm" style="color:var(--t3)">${tk.pendingOn||'—'}</td>
-    <td style="font-size:10.5px;color:var(--t3);font-family:var(--mo);white-space:nowrap">${tk.created||'—'}</td>
+    <td class="tnm" style="color:var(--t3);font-weight:600">${tk.pendingOn||'—'}</td>
+    <td style="font-size:11.5px;color:var(--t2);font-family:var(--mo);white-space:nowrap">${tk.created||'—'}</td>
     <td>${pBadge(tk.priority)}</td>
     <td>${sBadge(tk.status)}</td>
-    <td style="font-size:11px;color:var(--t3)">${tk.type||'—'}</td>
-  </tr>`).join('') : '<tr><td colspan="8" style="text-align:center;padding:22px;color:var(--t3)">No matching tasks</td></tr>';
+    <td style="font-size:12px;color:var(--t3);font-weight:600">${tk.type||'—'}</td>
+  </tr>`).join('') : '<tr><td colspan="8" style="text-align:center;padding:30px;color:var(--t3);font-size:14px;font-weight:600">No matching tasks found.</td></tr>';
 }
 
 /* ══════════════════════════════
@@ -813,9 +821,9 @@ function renderMonthly() {
   $('mt-kpis').innerHTML = [
     kpi('Allocated',   curA.allocated,    'This month',    'var(--t1)', 'linear-gradient(90deg,#3d9eff,#7c8fff)'),
     kpi('Consumed',    curA.consumed,     'Hours used',    'var(--cyan)','linear-gradient(90deg,#1fd3ee,#1fc966)'),
-    kpi('Remaining',   rem,               'Hours left',    rem>30?'#1fc966':rem>10?'#f5a524':'#f04040','linear-gradient(90deg,#1fc966,#1fd3ee)'),
-    kpi('Utilization', pct+'%',           'Efficiency',    pct>90?'#f04040':pct>70?'#f5a524':'#1fc966','linear-gradient(90deg,#f5a524,#fbbf24)','22px'),
-    kpi('Bug Fix',     curCat.bugfix||0,  'This month',    '#f04040',   'linear-gradient(90deg,#f04040,#f87171)'),
+    kpi('Remaining',   rem,               'Hours left',    rem>30?'#4ade80':rem>10?'#facc15':'#ff6b6b','linear-gradient(90deg,#1fc966,#1fd3ee)'),
+    kpi('Utilization', pct+'%',           'Efficiency',    pct>90?'#ff6b6b':pct>70?'#facc15':'#4ade80','linear-gradient(90deg,#f5a524,#fbbf24)','28px'),
+    kpi('Bug Fix',     curCat.bugfix||0,  'This month',    '#ff6b6b',   'linear-gradient(90deg,#f04040,#f87171)'),
     kpi('Enhancement', curCat.enhancement||0,'This month', 'var(--blue)','linear-gradient(90deg,#3d9eff,#7c8fff)'),
     kpi('Mgn Upgrade', curCat.magento||0, 'This month',   'var(--purple)','linear-gradient(90deg,#a94ff7,#7c8fff)'),
     kpi('YTD Consumed',ytdC,              'All months',    'var(--t1)', 'linear-gradient(90deg,#7c8fff,#1fd3ee)'),
@@ -827,11 +835,11 @@ function renderMonthly() {
     const hC=Math.max(Math.round((m.consumed/mxH)*BH),4);
     const rr=Math.max(0,m.allocated-m.consumed);
     const hR=rr>0?Math.max(Math.round((rr/mxH)*BH),4):0;
-    return `<div class="bc-col" style="min-width:40px">
+    return `<div class="bc-col" style="min-width:44px">
       <div class="bc-bars">
-        <div class="bc-bar" style="width:11px;height:${hA}px;background:linear-gradient(to top,#3d9eff,#7c8fff)"><span>${m.allocated}</span></div>
-        <div class="bc-bar" style="width:11px;height:${hC}px;background:linear-gradient(to top,#1fc966,#1fd3ee)"><span>${m.consumed}</span></div>
-        ${hR>0?`<div class="bc-bar" style="width:11px;height:${hR}px;background:rgba(245,165,36,.15);border:1px dashed rgba(245,165,36,.4)"><span style="color:rgba(245,165,36,.9)">${rr}</span></div>`:''}
+        <div class="bc-bar" data-val="Allocated: ${m.allocated}" style="width:12px;height:${hA}px;background:linear-gradient(to top,#3d9eff,#7c8fff)"></div>
+        <div class="bc-bar" data-val="Consumed: ${m.consumed}" style="width:12px;height:${hC}px;background:linear-gradient(to top,#1fc966,#1fd3ee)"></div>
+        ${hR>0?`<div class="bc-bar" data-val="Remaining: ${rr}" style="width:12px;height:${hR}px;background:rgba(245,165,36,.18);border:1px dashed rgba(245,165,36,.6)"></div>`:''}
       </div>
       <div class="bc-line"></div>
       <div class="bc-lbl">${m.date.replace('-','<br>')}</div>
@@ -844,12 +852,12 @@ function renderMonthly() {
     const hB=tot?Math.max(Math.round((m.bugfix/mxC)*100),m.bugfix>0?4:0):0;
     const hE=tot?Math.max(Math.round((m.enhancement/mxC)*100),m.enhancement>0?4:0):0;
     const hM=tot?Math.max(Math.round(((m.magento||0)/mxC)*100),(m.magento||0)>0?4:0):0;
-    return `<div class="bc-col" style="min-width:40px">
+    return `<div class="bc-col" style="min-width:44px">
       <div class="bc-bars">
-        ${hB>0?`<div class="bc-bar" style="width:10px;height:${hB}px;background:#f04040"><span>${m.bugfix}</span></div>`:''}
-        ${hE>0?`<div class="bc-bar" style="width:10px;height:${hE}px;background:#3d9eff"><span>${m.enhancement}</span></div>`:''}
-        ${hM>0?`<div class="bc-bar" style="width:10px;height:${hM}px;background:#a94ff7"><span>${m.magento}</span></div>`:''}
-        ${tot===0?`<div class="bc-bar" style="width:10px;height:4px;background:var(--s4)"></div>`:''}
+        ${hB>0?`<div class="bc-bar" data-val="Bug Fix: ${m.bugfix}" style="width:12px;height:${hB}px;background:#f04040"></div>`:''}
+        ${hE>0?`<div class="bc-bar" data-val="Enhancement: ${m.enhancement}" style="width:12px;height:${hE}px;background:#3d9eff"></div>`:''}
+        ${hM>0?`<div class="bc-bar" data-val="Magento: ${m.magento}" style="width:12px;height:${hM}px;background:#a94ff7"></div>`:''}
+        ${tot===0?`<div class="bc-bar" data-val="No Hours" style="width:12px;height:4px;background:var(--s4)"></div>`:''}
       </div>
       <div class="bc-line"></div>
       <div class="bc-lbl">${m.date.replace('-','<br>')}</div>
@@ -863,15 +871,15 @@ function renderMonthly() {
     const p2=m.allocated?Math.round(m.consumed/m.allocated*100):0;
     const bc=p2>=100?'#f04040':p2>80?'#f5a524':'#1fc966';
     return `<div class="mt-card${m.date===curDate?' cur-m':''}">
-      <div class="mt-date">${m.date}${m.date===curDate?' <span class="b b-o" style="font-size:8px">NOW</span>':''}</div>
+      <div class="mt-date">${m.date}${m.date===curDate?' <span class="b b-o" style="font-size:9px">NOW</span>':''}</div>
       <div class="mt-tot">${m.consumed}</div>
       <div class="mt-sub">/ ${m.allocated} hrs · ${p2}%</div>
       <div class="mt-bar"><div class="mt-fill" style="width:${Math.min(p2,100)}%;background:${bc}"></div></div>
       <div class="mt-cats">
-        ${(m.bugfix||0)>0?`<div class="mt-cat"><span class="mt-ck">Bug Fix</span><span class="mt-cv" style="color:#f04040">${m.bugfix}</span></div>`:''}
-        ${(m.enhancement||0)>0?`<div class="mt-cat"><span class="mt-ck">Enhancement</span><span class="mt-cv" style="color:#3d9eff">${m.enhancement}</span></div>`:''}
-        ${(m.magento||0)>0?`<div class="mt-cat"><span class="mt-ck">Mgn Upgrade</span><span class="mt-cv" style="color:#a94ff7">${m.magento}</span></div>`:''}
-        ${r2>0?`<div class="mt-cat"><span class="mt-ck">Remaining</span><span class="mt-cv" style="color:${bc}">${r2}</span></div>`:''}
+        ${(m.bugfix||0)>0?`<div class="mt-cat"><span class="mt-ck">Bug Fix</span><span class="mt-cv" style="color:#ff6b6b">${m.bugfix}</span></div>`:''}
+        ${(m.enhancement||0)>0?`<div class="mt-cat"><span class="mt-ck">Enhance</span><span class="mt-cv" style="color:#60a5fa">${m.enhancement}</span></div>`:''}
+        ${(m.magento||0)>0?`<div class="mt-cat"><span class="mt-ck">Upgrade</span><span class="mt-cv" style="color:#c084fc">${m.magento}</span></div>`:''}
+        ${r2>0?`<div class="mt-cat"><span class="mt-ck">Remain</span><span class="mt-cv" style="color:${bc}">${r2}</span></div>`:''}
       </div>
     </div>`;
   }).join('');
@@ -897,11 +905,11 @@ function renderHours() {
     const hC=Math.max(Math.round((m.total.crosby/mxH)*BH),4);
     const hCP=Math.max(Math.round((m.total.cp/mxH)*BH),4);
     const hR=m.remaining.crosby>0?Math.max(Math.round((m.remaining.crosby/mxH)*BH),4):0;
-    return `<div class="bc-col">
+    return `<div class="bc-col" style="min-width:44px">
       <div class="bc-bars">
-        <div class="bc-bar" style="width:16px;height:${hC}px;background:linear-gradient(to top,#3d9eff,#7c8fff)"><span>${m.total.crosby||''}</span></div>
-        <div class="bc-bar" style="width:16px;height:${hCP}px;background:linear-gradient(to top,#1fd3ee,#1fc966)"><span>${m.total.cp||''}</span></div>
-        ${hR>0?`<div class="bc-bar" style="width:16px;height:${hR}px;background:rgba(61,158,255,.12);border:1px dashed rgba(61,158,255,.4)"><span style="color:rgba(61,158,255,.9)">${m.remaining.crosby}</span></div>`:''}
+        <div class="bc-bar" data-val="Crosby: ${m.total.crosby||0}" style="width:14px;height:${hC}px;background:linear-gradient(to top,#3d9eff,#7c8fff)"></div>
+        <div class="bc-bar" data-val="CP: ${m.total.cp||0}" style="width:14px;height:${hCP}px;background:linear-gradient(to top,#1fd3ee,#1fc966)"></div>
+        ${hR>0?`<div class="bc-bar" data-val="Remaining: ${m.remaining.crosby}" style="width:14px;height:${hR}px;background:rgba(61,158,255,.15);border:1px dashed rgba(61,158,255,.6)"></div>`:''}
       </div>
       <div class="bc-line"></div>
       <div class="bc-lbl">${m.name.slice(0,3)}</div>
@@ -925,13 +933,13 @@ function renderHours() {
     }).join('');
     return `<div class="card">
       <div class="ch">
-        <div class="ct"><div class="cd" style="background:${dotC[mi]||'#3d9eff'}"></div>${m.name} 2026${isCur?' <span class="b b-o" style="font-size:9px;margin-left:4px">Current</span>':''}</div>
+        <div class="ct"><div class="cd" style="background:${dotC[mi]||'#3d9eff'}"></div>${m.name} 2026${isCur?' <span class="b b-o" style="font-size:10px;margin-left:6px">Current</span>':''}</div>
       </div>
       <div class="pills">
         <div class="pill"><div class="pv">${m.total.crosby}</div><div class="pl">Crosby Total</div></div>
         <div class="pill"><div class="pv">${m.total.cp}</div><div class="pl">CP Total</div></div>
-        <div class="pill"><div class="pv" style="color:${m.remaining.crosby>0?'#f5a524':'#1fc966'}">${m.remaining.crosby}</div><div class="pl">Crosby Left</div></div>
-        <div class="pill"><div class="pv" style="color:${m.remaining.cp>0?'#a94ff7':'#1fc966'}">${m.remaining.cp}</div><div class="pl">CP Left</div></div>
+        <div class="pill"><div class="pv" style="color:${m.remaining.crosby>0?'#facc15':'#4ade80'}">${m.remaining.crosby}</div><div class="pl">Crosby Left</div></div>
+        <div class="pill"><div class="pv" style="color:${m.remaining.cp>0?'#c084fc':'#4ade80'}">${m.remaining.cp}</div><div class="pl">CP Left</div></div>
       </div>
       <div class="wkg">${wkHtml}</div>
     </div>`;
@@ -947,10 +955,20 @@ function renderUpgrade() {
   const tDone = m.tasks.filter(t=>(t.status||'').toLowerCase().includes('done')||(t.status||'').toLowerCase().includes('complet')).length;
   const overallProgress = m.totalAlloc ? Math.round((m.totalCons / m.totalAlloc) * 100) : 0;
   
-  // Create Filter Arrays
-  const allWeeks = [...new Set(m.tasks.map(t => t.week))].filter(Boolean);
-  const allPhases = [...new Set(m.tasks.map(t => t.phase))].filter(Boolean);
-  const allStatuses = [...new Set(m.tasks.map(t => t.status))].filter(Boolean);
+  // Safe filtering variables
+  let wkOptions = '<option value="all">All Weeks</option>';
+  let phOptions = '<option value="all">All Phases</option>';
+  let stOptions = '<option value="all">All Statuses</option>';
+  
+  if (m.tasks.length > 0) {
+      const allWeeks = [...new Set(m.tasks.map(t => t.week))].filter(Boolean);
+      const allPhases = [...new Set(m.tasks.map(t => t.phase))].filter(Boolean);
+      const allStatuses = [...new Set(m.tasks.map(t => t.status))].filter(Boolean);
+
+      allWeeks.forEach(w => { wkOptions += '<option value="' + w + '">' + w + '</option>'; });
+      allPhases.forEach(p => { phOptions += '<option value="' + p + '">' + p + '</option>'; });
+      allStatuses.forEach(s => { stOptions += '<option value="' + s + '">' + s + '</option>'; });
+  }
 
   // Overview Counts
   const doneCount = m.tasks.filter(t => t.status.toLowerCase().includes('done') || t.status.toLowerCase().includes('complet')).length;
@@ -960,20 +978,19 @@ function renderUpgrade() {
   // Active Tasks Focus
   const activeTasks = m.tasks.filter(t => t.status.toLowerCase().includes('process'));
   let activeHTML = activeTasks.slice(0, 5).map(t =>
-    `<div style="font-size:11.5px;color:var(--t2);display:flex;gap:7px;line-height:1.4">
-      <span style="color:var(--blue);flex-shrink:0">›</span><b>${t.title}</b> <span style="opacity:0.6">(${t.phase} - ${t.week})</span>
+    `<div style="font-size:12px;color:var(--t2);display:flex;gap:8px;line-height:1.4">
+      <span style="color:var(--blue);flex-shrink:0;font-weight:bold">›</span><b style="color:var(--t1)">${t.title}</b> <span style="opacity:0.7">(${t.phase} - ${t.week})</span>
     </div>`
   ).join('');
-  if(activeTasks.length === 0) activeHTML = `<div style="font-size:11px;color:var(--t3)">No tasks currently in process.</div>`;
+  if(activeTasks.length === 0) activeHTML = `<div style="font-size:12px;color:var(--t3);font-weight:600">No tasks currently in process.</div>`;
 
-  // Create Framework
   const html = `
     <div class="kgrid" id="up-kpis">
       ${kpi('Total Tasks',  tTotal, 'Items scheduled', 'var(--t1)',    'linear-gradient(90deg,#3d9eff,#1fd3ee)')}
       ${kpi('Completed',    tDone,  'Tasks finished',  'var(--green)', 'linear-gradient(90deg,#1fc966,#1fd3ee)')}
       ${kpi('Allocated',    m.totalAlloc, 'Total Hours', 'var(--indigo)','linear-gradient(90deg,#7c8fff,#a94ff7)')}
       ${kpi('Consumed',     m.totalCons,  'Hours Used',  'var(--amber)', 'linear-gradient(90deg,#f5a524,#fbbf24)')}
-      ${kpi('Overall %',    overallProgress+'%', 'Progress', 'var(--blue)', 'linear-gradient(90deg,#3d9eff,#7c8fff)','20px')}
+      ${kpi('Overall %',    overallProgress+'%', 'Progress', 'var(--blue)', 'linear-gradient(90deg,#3d9eff,#7c8fff)','28px')}
     </div>
     <div class="g6040">
       <div class="card" style="margin:0">
@@ -989,27 +1006,27 @@ function renderUpgrade() {
             else if (isAct) statClass = 'act';
 
             const taskNames = ph.tasks.slice(0, 2).map(t => t.title).join(' · ');
-            const more = ph.tasks.length > 2 ? ` (+${ph.tasks.length-2} more)` : '';
+            const more = ph.tasks.length > 2 ? ' (+' + (ph.tasks.length-2) + ' more)' : '';
 
-            return `<div class="tli">
-              <div class="tld ${statClass}"></div>
-              <div class="tlh" style="justify-content:space-between;width:100%;padding-right:12px;box-sizing:border-box">
-                 <span>${ph.name}</span>
-                 <span class="b ${isDone ? 'b-g' : (isAct ? 'b-bl' : 'b-gy')}" style="font-size:9.5px">${phasePct}% Done</span>
-              </div>
-              <div class="tls">${taskNames}${more}</div>
-            </div>`;
+            return '<div class="tli">' +
+              '<div class="tld ' + statClass + '"></div>' +
+              '<div class="tlh" style="justify-content:space-between;width:100%;padding-right:16px;box-sizing:border-box">' +
+                 '<span>' + ph.name + '</span>' +
+                 '<span class="b ' + (isDone ? 'b-g' : (isAct ? 'b-bl' : 'b-gy')) + '" style="font-size:10px">' + phasePct + '% Done</span>' +
+              '</div>' +
+              '<div class="tls">' + taskNames + more + '</div>' +
+            '</div>';
           }).join('')}
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;flex-direction:column;gap:16px">
         <div class="card" style="margin:0">
           <div class="ch"><div class="ct"><div class="cd" style="background:var(--green)"></div>Hours Utilization</div></div>
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--t3);margin-bottom:6px">
-            <span>Total Project Hours</span><span style="color:var(--t1);font-weight:700">${overallProgress}%</span>
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--t3);margin-bottom:8px;font-weight:700">
+            <span>Total Project Hours</span><span style="color:var(--t1);font-weight:800;font-size:14px">${overallProgress}%</span>
           </div>
-          <div style="height:6px;background:var(--s4);border-radius:3px;overflow:hidden;margin-bottom:14px">
-            <div style="width:${overallProgress}%;height:100%;background:linear-gradient(90deg,#1fc966,#1fd3ee);border-radius:3px"></div>
+          <div style="height:8px;background:var(--s4);border-radius:4px;overflow:hidden;margin-bottom:18px">
+            <div style="width:${overallProgress}%;height:100%;background:linear-gradient(90deg,#1fc966,#1fd3ee);border-radius:4px"></div>
           </div>
           <div class="pills" style="margin-bottom:0">
             <div class="pill" style="flex:1"><div class="pv">${m.totalAlloc}</div><div class="pl">Allocated</div></div>
@@ -1017,31 +1034,28 @@ function renderUpgrade() {
             <div class="pill" style="flex:1"><div class="pv" style="color:${(m.totalAlloc - m.totalCons) < 0 ? 'var(--red)' : 'var(--amber)'}">${m.totalAlloc - m.totalCons}</div><div class="pl">Remaining</div></div>
           </div>
         </div>
-        <div class="card" style="margin:0">
+        <div class="card" style="margin:0;flex:1">
           <div class="ch"><div class="ct"><div class="cd" style="background:var(--amber)"></div>Active / In-Process Tasks</div></div>
-          <div style="display:flex;flex-direction:column;gap:7px">${activeHTML}</div>
+          <div style="display:flex;flex-direction:column;gap:9px">${activeHTML}</div>
         </div>
       </div>
     </div>
     <div class="card">
-      <div class="ch" style="flex-wrap:wrap;gap:12px">
+      <div class="ch" style="flex-wrap:wrap;gap:16px">
         <div class="ct"><div class="cd" style="background:var(--blue)"></div>Magento Tasks & Weekly Schedule</div>
-        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
           <span class="b b-g">${doneCount} Done</span>
           <span class="b b-bl">${processCount} In Process</span>
           <span class="b b-o">${pendingCount} Pending</span>
-          <div style="width:1px;height:14px;background:var(--bd);margin:0 4px"></div>
-          <select id="mg-wk" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t2);font-size:11px;padding:4px 8px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none">
-            <option value="all">All Weeks</option>
-            ${allWeeks.map(w => `<option value="${w}">${w}</option>`).join('')}
+          <div style="width:2px;height:18px;background:var(--bd);margin:0 6px"></div>
+          <select id="mg-wk" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t1);font-size:12px;padding:6px 12px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
+            ${wkOptions}
           </select>
-          <select id="mg-ph" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t2);font-size:11px;padding:4px 8px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none">
-            <option value="all">All Phases</option>
-            ${allPhases.map(p => `<option value="${p}">${p}</option>`).join('')}
+          <select id="mg-ph" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t1);font-size:12px;padding:6px 12px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
+            ${phOptions}
           </select>
-          <select id="mg-st" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t2);font-size:11px;padding:4px 8px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none">
-            <option value="all">All Statuses</option>
-            ${allStatuses.map(s => `<option value="${s}">${s}</option>`).join('')}
+          <select id="mg-st" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t1);font-size:12px;padding:6px 12px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
+            ${stOptions}
           </select>
         </div>
       </div>
@@ -1054,12 +1068,9 @@ function renderUpgrade() {
     </div>
   `;
   $('upgrade').innerHTML = html;
-  
-  // Call filter immediately to populate table body
   window.filterMagentoTasks();
 }
 
-// Global Filtering Engine for Magento Table
 window.filterMagentoTasks = function() {
   if(!D.magento || !D.magento.tasks) return;
   const wk = $('mg-wk') ? $('mg-wk').value : 'all';
@@ -1073,15 +1084,14 @@ window.filterMagentoTasks = function() {
   });
 
   $('up-body').innerHTML = filtered.length ? filtered.map(tk => `<tr>
-    <td style="color:var(--t2);font-weight:600;white-space:nowrap"><div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.5px">${tk.week}</div>${tk.phase}</td>
-    <td><div class="ttl" style="max-width:350px">${tk.title}</div></td>
-    <td class="tnm" style="color:var(--blue);font-family:var(--mo);white-space:nowrap">${tk.date}</td>
-    <td style="font-size:12px;font-family:var(--mo)">${tk.alloc}</td>
-    <td style="font-size:12px;font-family:var(--mo);color:var(--cyan)">${tk.cons}</td>
+    <td style="color:var(--t2);font-weight:700;white-space:nowrap"><div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px">${tk.week}</div>${tk.phase}</td>
+    <td><div class="ttl" style="max-width:380px">${tk.title}</div></td>
+    <td class="tnm" style="color:var(--blue);font-family:var(--mo);white-space:nowrap;font-weight:600">${tk.date}</td>
+    <td style="font-size:13px;font-family:var(--mo);font-weight:600">${tk.alloc}</td>
+    <td style="font-size:13px;font-family:var(--mo);color:var(--cyan);font-weight:700">${tk.cons}</td>
     <td>${sBadge(tk.status)}</td>
-  </tr>`).join('') : '<tr><td colspan="6" style="text-align:center;padding:22px;color:var(--t3)">No tasks match the selected filters.</td></tr>';
+  </tr>`).join('') : '<tr><td colspan="6" style="text-align:center;padding:30px;color:var(--t3);font-weight:600;font-size:14px">No tasks match the selected filters.</td></tr>';
 };
-
 
 /* ══════════════════════════════
    MAIN LOAD
@@ -1100,18 +1110,15 @@ async function loadAll(manual=false) {
 
   try {
     $('ldrt').textContent = 'Fetching live data from Google Sheets…';
-    // Load ALL 4 sheets simultaneously
     await Promise.all([ loadTasks(), loadMonthly(), loadHours(), loadMagento() ]);
     liveOk = true;
   } catch(e) {
     console.error(e);
-    // Use fallback data if fetch fails
     D.tasks=FB.tasks; D.pri=FB.pri; D.months=FB.months; D.alloc=FB.alloc; D.hours=FB.hours;
-    D.magento = { phases:[{name:'Setup',tasks:[],done:0,alloc:0,cons:0}], totalAlloc:0, totalCons:0, tasks:[], notes:['Failed to load data.'] };
+    D.magento = { phases:[{name:'Setup',tasks:[],done:0,alloc:0,cons:0}], totalAlloc:0, totalCons:0, tasks:[] };
     allTasks = FB.tasks;
   }
 
-  // Render everything dynamically!
   renderOv(); renderTasks(); renderMonthly(); renderHours(); renderUpgrade();
 
   const now = new Date();
@@ -1135,7 +1142,6 @@ async function loadAll(manual=false) {
   loadCount++;
   if (loadCount === 1) $('ldr').classList.add('gone');
 
-  // Countdown + auto-refresh
   nextRefresh = Date.now() + REFRESH_MS;
   cdTimer = setInterval(() => {
     const sec = Math.max(0, Math.round((nextRefresh-Date.now())/1000));
@@ -1145,7 +1151,6 @@ async function loadAll(manual=false) {
   refreshTimer = setTimeout(() => loadAll(), REFRESH_MS);
 }
 
-/* ── NAV ── */
 const TITLES = {ov:'Overview',tasks:'Task Tracker',monthly:'Monthly Track',hours:'Hours Track',upgrade:'Magento Upgrade'};
 function goto(el, id) {
   document.querySelectorAll('.nav').forEach(n=>n.classList.remove('on'));
@@ -1154,26 +1159,12 @@ function goto(el, id) {
   $('pgt').textContent = TITLES[id]||id;
 }
 
-/* ══════════════════════════════
-   FALLBACK EMBEDDED DATA
-══════════════════════════════ */
 const FB = {
-  tasks:[
-    {id:'44202',title:'Company Management',assignedTo:'kshitij s',pendingOn:'Matthew A',created:'9-Mar-2026',status:'Reviewing',priority:'High',type:'Issue',module:'B2B'},
-    {id:'44090',title:'Adobe Commerce 2.4.8 Upgrade',assignedTo:'kshitij s',pendingOn:'kshitij s',created:'2-Jan-2026',status:'Open',priority:'Medium',type:'Enhancement',module:'B2B'},
-  ],
-  pri:{showstopper:0,high:3,medium:2,low:5},
-  months:[
-    {date:'Jan-26',bugfix:16,enhancement:109,magento:0},{date:'Feb-26',bugfix:4,enhancement:58,magento:63},
-    {date:'Mar-26',bugfix:3,enhancement:16,magento:23},
-  ],
-  alloc:[
-    {date:'Jan-26',allocated:125,consumed:125},{date:'Feb-26',allocated:125,consumed:125},
-    {date:'Mar-26',allocated:125,consumed:43},
-  ],
-  hours:[
-    {name:'March',weeks:[{label:'1st Week',crosby:26,cp:24},{label:'2nd Week',crosby:32,cp:27}],total:{crosby:58,cp:51},remaining:{crosby:67,cp:74}},
-  ]
+  tasks:[{id:'44202',title:'Company Management',assignedTo:'kshitij s',pendingOn:'Matthew A',created:'9-Mar-2026',status:'Reviewing',priority:'High',type:'Issue',module:'B2B'}],
+  pri:{showstopper:0,high:1,medium:0,low:0},
+  months:[{date:'Mar-26',bugfix:3,enhancement:16,magento:23}],
+  alloc:[{date:'Mar-26',allocated:125,consumed:43}],
+  hours:[{name:'March',weeks:[{label:'1st Week',crosby:26,cp:24}],total:{crosby:26,cp:24},remaining:{crosby:99,cp:101}}]
 };
 
 window.addEventListener('load', () => loadAll());
