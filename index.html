@@ -12,14 +12,14 @@
   --bd:rgba(255,255,255,.08);--bd2:rgba(255,255,255,.15);
   /* Contrast Improvements: Made text colors significantly brighter */
   --t1:#ffffff; 
-  --t2:#cbd5e1; 
+  --t2:#f1f5f9; 
   --t3:#94a3b8; 
   --blue:#3d9eff;--indigo:#7c8fff;--cyan:#1fd3ee;--green:#1fc966;
-  --amber:#f5a524;--red:#f04040;--purple:#a94ff7;--pink:#e8609a;
+  --amber:#f5a524;--red:#ff6b6b;--purple:#a94ff7;--pink:#e8609a;
   --fn:'Plus Jakarta Sans',sans-serif;--mo:'JetBrains Mono',monospace;
   --r:13px;--rs:8px;
 }
-html{font-size:15px} /* Increased base font size */
+html{font-size:15px} 
 body{font-family:var(--fn);background:var(--bg);color:var(--t1);min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;z-index:0;background-image:linear-gradient(rgba(61,158,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(61,158,255,.025) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
 body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(61,158,255,.06) 0%,transparent 68%);top:-150px;right:-150px;pointer-events:none}
@@ -31,7 +31,7 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
 .sb-logo{display:flex;align-items:center;gap:11px;padding:18px 16px 15px;border-bottom:1px solid var(--bd)}
 .sb-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#3d9eff,#7c8fff);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 0 18px rgba(61,158,255,.32)}
 .sb-name{font-size:14px;font-weight:700;color:var(--t1);line-height:1.25}
-.sb-name small{display:block;font-size:11px;font-weight:500;color:var(--t2)}
+.sb-name small{display:block;font-size:11px;font-weight:500;color:var(--t3)}
 .sb-sec{padding:12px 8px 4px}
 .sb-lbl{font-size:10px;font-weight:700;color:var(--t3);letter-spacing:1.4px;text-transform:uppercase;padding:0 8px;margin-bottom:6px}
 .nav{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:var(--rs);cursor:pointer;color:var(--t2);font-size:13px;font-weight:600;transition:all .15s;border:1px solid transparent;user-select:none;margin-bottom:2px}
@@ -77,7 +77,7 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
 @keyframes fu{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 
 /* KPI */
-.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-bottom:18px}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;margin-bottom:18px}
 .kpi{background:var(--s2);border:1px solid var(--bd);border-radius:var(--r);padding:16px;position:relative;overflow:hidden;transition:border-color .2s,transform .15s}
 .kpi:hover{border-color:var(--bd2);transform:translateY(-2px)}
 .kpi::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--kl,linear-gradient(90deg,#3d9eff,#7c8fff))}
@@ -96,16 +96,16 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px}
 .g6040{display:grid;grid-template-columns:3fr 2fr;gap:16px;margin-bottom:16px}
 
-/* BADGES */
-.b{display:inline-flex;align-items:center;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap}
-.b-r{background:rgba(240,64,64,.12);color:#ff6b6b;border:1px solid rgba(240,64,64,.25)}
-.b-o{background:rgba(245,165,36,.12);color:#facc15;border:1px solid rgba(245,165,36,.25)}
-.b-y{background:rgba(234,179,8,.12);color:#fde047;border:1px solid rgba(234,179,8,.25)}
-.b-g{background:rgba(31,201,102,.12);color:#4ade80;border:1px solid rgba(31,201,102,.25)}
-.b-bl{background:rgba(61,158,255,.12);color:#60a5fa;border:1px solid rgba(61,158,255,.25)}
-.b-in{background:rgba(124,143,255,.12);color:#a5b4fc;border:1px solid rgba(124,143,255,.25)}
-.b-gy{background:rgba(148,163,184,.12);color:#cbd5e1;border:1px solid rgba(148,163,184,.25)}
-.b-pu{background:rgba(169,79,247,.12);color:#c084fc;border:1px solid rgba(169,79,247,.25)}
+/* STRUCTURED BADGES */
+.b{display:inline-flex;align-items:center;justify-content:center;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;white-space:nowrap;letter-spacing:0.4px;min-width:95px;line-height:1.2;border:1px solid transparent;}
+.b-r{background:rgba(240,64,64,.12);color:#ff6b6b;border-color:rgba(240,64,64,.25)}
+.b-o{background:rgba(245,165,36,.12);color:#facc15;border-color:rgba(245,165,36,.25)}
+.b-y{background:rgba(234,179,8,.12);color:#fde047;border-color:rgba(234,179,8,.25)}
+.b-g{background:rgba(31,201,102,.12);color:#4ade80;border-color:rgba(31,201,102,.25)}
+.b-bl{background:rgba(61,158,255,.12);color:#60a5fa;border-color:rgba(61,158,255,.25)}
+.b-in{background:rgba(124,143,255,.12);color:#a5b4fc;border-color:rgba(124,143,255,.25)}
+.b-gy{background:rgba(148,163,184,.12);color:#cbd5e1;border-color:rgba(148,163,184,.25)}
+.b-pu{background:rgba(169,79,247,.12);color:#c084fc;border-color:rgba(169,79,247,.25)}
 
 /* TABLE */
 .tbl{width:100%;border-collapse:collapse}
@@ -115,7 +115,7 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
 .tbl tr:hover td{background:rgba(61,158,255,.03)}
 .tid{font-family:var(--mo);font-size:12px;color:var(--t2);font-weight:500}
 .ttl{font-weight:600;color:var(--t1);max-width:280px;line-height:1.4}
-.tsb{font-size:11px;color:var(--t2);margin-top:4px}
+.tsb{font-size:11px;color:var(--t3);margin-top:4px}
 .tnm{font-size:12.5px;color:var(--t2)}
 
 /* PRIORITY BARS */
@@ -171,10 +171,6 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
 .sr:last-child{border-bottom:none}
 .srk{color:var(--t3);font-weight:600}.srv{font-weight:700;color:var(--t1)}
 
-/* RING */
-.ring{display:flex;flex-direction:column;align-items:center;gap:6px}
-.rl{font-size:11px;font-weight:700;color:var(--t3);text-align:center}
-
 /* MONTHLY CARDS */
 .mt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-bottom:18px}
 .mt-card{background:var(--s3);border:1px solid var(--bd);border-radius:var(--rs);padding:14px 15px;transition:border-color .2s,transform .15s}
@@ -190,35 +186,51 @@ body::after{content:'';position:fixed;z-index:0;width:600px;height:600px;border-
 .mt-ck{color:var(--t3);font-weight:600}.mt-cv{font-weight:700;font-family:var(--mo)}
 
 /* BAR CHART WITH CUSTOM HOVER TOOLTIPS */
-.bch{display:flex;gap:8px;align-items:flex-end;overflow-x:auto;padding-bottom:6px;padding-top:20px;}
+.bch{display:flex;gap:8px;align-items:flex-end;overflow-x:auto;padding-bottom:10px;padding-top:25px;}
 .bch::-webkit-scrollbar{height:4px}.bch::-webkit-scrollbar-thumb{background:var(--bd2)}
-.bc-col{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;min-width:42px}
-.bc-bars{display:flex;gap:3px;align-items:flex-end}
+
+.bc-col{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  flex-shrink:0;
+  min-width:44px;
+  position:relative; /* Prevents tooltips from hiding behind other columns */
+  transition: z-index 0s;
+}
+.bc-col:hover { z-index: 100; } /* Brings hovered column to front */
+
+.bc-bars{display:flex;gap:4px;align-items:flex-end}
 .bc-bar{border-radius:4px 4px 0 0;min-height:4px;position:relative;cursor:pointer;transition:opacity .2s}
 .bc-bar:hover{opacity:0.8}
+
 /* Dynamic Tooltip CSS */
 .bc-bar::after {
   content: attr(data-val);
   position: absolute;
-  bottom: 100%;
+  bottom: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
-  background: #fff;
-  color: #060a10;
-  padding: 5px 9px;
-  border-radius: 4px;
+  background: #0f1520;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
   font-size: 11.5px;
-  font-weight: 800;
+  font-weight: 700;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s, transform 0.2s;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
-  z-index: 10;
-  margin-bottom: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 101; /* Extremely high z-index relative to hovered column */
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
   font-family: var(--fn);
 }
-.bc-bar:hover::after { opacity: 1; transform: translateX(-50%) translateY(-2px); }
+.bc-bar:hover::after { 
+  opacity: 1; 
+  transform: translateX(-50%) translateY(-2px); 
+}
 
 .bc-line{height:1px;background:var(--bd);width:100%}
 .bc-lbl{font-size:10.5px;color:var(--t2);text-align:center;line-height:1.4;font-weight:600}
@@ -488,36 +500,28 @@ async function fetchCSV(rawUrl) {
   throw new Error('All fetch attempts failed. Data could not be reached.');
 }
 
-/* ── Badges ── */
+/* ── Custom Uniform Badges ── */
 function pBadge(p) {
-  const m = (p||'').toLowerCase();
-  if (m.includes('show')) return '<span class="b b-r">SHOWSTOP</span>';
-  if (m.includes('high')) return '<span class="b b-o">HIGH</span>';
-  if (m.includes('med'))  return '<span class="b b-y">MEDIUM</span>';
-  if (m.includes('low'))  return '<span class="b b-g">LOW</span>';
-  return `<span class="b b-gy">${p||'—'}</span>`;
-}
-function sBadge(s) {
-  const m = (s||'').toLowerCase();
-  if (m.includes('done') || m.includes('complet')) return '<span class="b b-g">Done</span>';
-  if (m.includes('process') || m.includes('progress')) return '<span class="b b-bl">In Process</span>';
-  if (m.includes('pending') || m.includes('await')) return '<span class="b b-o">Pending</span>';
-  if (m.includes('open') || m.includes('active')) return '<span class="b b-bl">Active</span>';
-  if (m.includes('review')||m.includes('qa')) return '<span class="b b-in">Reviewing</span>';
-  if (m.includes('hold'))   return '<span class="b b-gy">On-Hold</span>';
-  return `<span class="b b-gy">${s||'—'}</span>`;
+  const v = (p||'—').trim().toUpperCase(); // Priority looks better strictly uppercase
+  const m = v.toLowerCase();
+  if (m.includes('show')) return `<span class="b b-r">${v}</span>`;
+  if (m.includes('high')) return `<span class="b b-o">${v}</span>`;
+  if (m.includes('med'))  return `<span class="b b-y">${v}</span>`;
+  if (m.includes('low'))  return `<span class="b b-g">${v}</span>`;
+  return `<span class="b b-gy">${v}</span>`;
 }
 
-function gaugeRing(pct, col, sz=72) {
-  const r = sz/2 - 8; const c = 2*Math.PI*r; const off = c*(1-pct/100);
-  return `<svg width="${sz}" height="${sz}" viewBox="0 0 ${sz} ${sz}">
-    <circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="6"/>
-    <circle cx="${sz/2}" cy="${sz/2}" r="${r}" fill="none" stroke="${col}" stroke-width="6"
-      stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"
-      transform="rotate(-90 ${sz/2} ${sz/2})" stroke-linecap="round"/>
-    <text x="${sz/2}" y="${sz/2+4}" text-anchor="middle" fill="${col}"
-      font-family="Plus Jakarta Sans" font-size="12" font-weight="800">${pct}%</text>
-  </svg>`;
+function sBadge(s) {
+  const v = (s||'—').trim(); // Keeps exact spelling/casing from your spreadsheet
+  const m = v.toLowerCase();
+  if (m.includes('done') || m.includes('complet')) return `<span class="b b-g">${v}</span>`;
+  if (m.includes('process') || m.includes('progress')) return `<span class="b b-bl">${v}</span>`;
+  if (m.includes('pending') || m.includes('await')) return `<span class="b b-o">${v}</span>`;
+  if (m.includes('open') || m.includes('active')) return `<span class="b b-bl">${v}</span>`;
+  if (m.includes('review')||m.includes('qa')) return `<span class="b b-in">${v}</span>`;
+  if (m.includes('hold'))   return `<span class="b b-gy">${v}</span>`;
+  if (m.includes('third party')) return `<span class="b b-pu">${v}</span>`;
+  return `<span class="b b-gy">${v}</span>`;
 }
 
 function kpi(l,v,h,kc,kl,fs) {
@@ -675,20 +679,34 @@ function renderOv() {
     kpi('Hrs Remaining',  rem,           'This month · '+curA.date, rem>30?'#4ade80':rem>10?'#facc15':'#ff6b6b', 'linear-gradient(90deg,#7c8fff,#a94ff7)'),
   ].join('');
 
-  // Donut Tooltips via Title
-  const COLS = {'Open':'#3d9eff','Reviewing':'#7c8fff','On-Hold':'#64748b','Await Inputs':'#f5a524','Third Party':'#a94ff7'};
-  const sc = {}; t.forEach(tk => { const s=(tk.status||'').trim(); sc[s]=(sc[s]||0)+1; });
+  // Dynamic Donut Slice Colors
+  const COLS = {};
+  const sc = {}; 
+  t.forEach(tk => { 
+    const s=(tk.status||'').trim(); 
+    sc[s]=(sc[s]||0)+1; 
+    const m = s.toLowerCase();
+    if (m.includes('done') || m.includes('complet')) COLS[s] = '#4ade80';
+    else if (m.includes('process') || m.includes('progress')) COLS[s] = '#60a5fa';
+    else if (m.includes('pending') || m.includes('await')) COLS[s] = '#facc15';
+    else if (m.includes('open') || m.includes('active')) COLS[s] = '#1fd3ee';
+    else if (m.includes('review')||m.includes('qa')) COLS[s] = '#a5b4fc';
+    else if (m.includes('hold')) COLS[s] = '#cbd5e1';
+    else if (m.includes('third party')) COLS[s] = '#c084fc';
+    else COLS[s] = '#94a3b8';
+  });
+
   const tot = t.length||1; const C = 2*Math.PI*38; let off = 0;
   const arcs = Object.keys(sc).map(s => {
     const f=sc[s]/tot*C; const g=C-f;
-    const a=`<circle cx="50" cy="50" r="38" fill="none" stroke="${COLS[s]||'#64748b'}" stroke-width="11"
+    const a=`<circle cx="50" cy="50" r="38" fill="none" stroke="${COLS[s]}" stroke-width="11"
       stroke-dasharray="${f.toFixed(2)} ${g.toFixed(2)}" stroke-dashoffset="${(-off).toFixed(2)}" transform="rotate(-90 50 50)">
       <title>${s}: ${sc[s]} Tasks</title>
       </circle>`;
     off+=f; return a;
   }).join('');
   const legs = Object.keys(sc).map(s =>
-    `<div class="dlr"><div class="dls" style="background:${COLS[s]||'#64748b'}"></div>${s}<span class="dln">${sc[s]}</span></div>`
+    `<div class="dlr"><div class="dls" style="background:${COLS[s]}"></div>${s}<span class="dln">${sc[s]}</span></div>`
   ).join('');
   $('ov-donut').innerHTML = `<svg width="105" height="105" viewBox="0 0 100 100" style="flex-shrink:0; cursor:pointer">
     <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="11"/>
@@ -699,10 +717,10 @@ function renderOv() {
 
   const mx = Math.max(p.showstopper, p.high, p.medium, p.low, 1);
   $('ov-pbars').innerHTML = [
-    {l:'Showstop',v:p.showstopper,c:'#f04040',bc:'b-r'},
-    {l:'High',    v:p.high,       c:'#f5a524',bc:'b-o'},
-    {l:'Medium',  v:p.medium,     c:'#eab308',bc:'b-y'},
-    {l:'Low',     v:p.low,        c:'#1fc966',bc:'b-g'},
+    {l:'Showstop',v:p.showstopper,c:'#ff6b6b',bc:'b-r'},
+    {l:'High',    v:p.high,       c:'#facc15',bc:'b-o'},
+    {l:'Medium',  v:p.medium,     c:'#fde047',bc:'b-y'},
+    {l:'Low',     v:p.low,        c:'#4ade80',bc:'b-g'},
   ].map(x => `<div class="pbr">
     <div class="pbrl"><span class="b ${x.bc}" style="font-size:10.5px">${x.l}</span></div>
     <div class="pbrt"><div class="pbrf" style="width:${(x.v/mx*100).toFixed(0)}%;background:${x.c}"></div></div>
@@ -735,7 +753,13 @@ function renderOv() {
     {l:'Crosby Left', v:`${cLeft}/${budget}`,  pct:Math.round(cLeft/budget*100),  c:'#facc15'},
     {l:'CP Left',     v:`${cpLeft}/${budget}`, pct:Math.round(cpLeft/budget*100), c:'#c084fc'},
   ].map(g => `<div class="gauge-item">
-    ${gaugeRing(g.pct, g.c, 80)}
+    <svg width="80" height="80" viewBox="0 0 80 80">
+      <circle cx="40" cy="40" r="32" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="6"/>
+      <circle cx="40" cy="40" r="32" fill="none" stroke="${g.c}" stroke-width="6"
+        stroke-dasharray="${(2*Math.PI*32).toFixed(1)}" stroke-dashoffset="${((2*Math.PI*32)*(1-g.pct/100)).toFixed(1)}"
+        transform="rotate(-90 40 40)" stroke-linecap="round"/>
+      <text x="40" y="44" text-anchor="middle" fill="${g.c}" font-family="Plus Jakarta Sans" font-size="12" font-weight="800">${g.pct}%</text>
+    </svg>
     <div class="gauge-lbl">${g.l}</div>
     <div class="gauge-val">${g.v}</div>
   </div>`).join('');
@@ -743,9 +767,9 @@ function renderOv() {
   const curCat = D.months.length ? D.months[D.months.length-1] : {bugfix:0,enhancement:0,magento:0};
   const catTot = (curCat.bugfix||0) + (curCat.enhancement||0) + (curCat.magento||0) || 1;
   $('ov-types').innerHTML = [
-    {l:'Bug Fix',     v:curCat.bugfix||0,       c:'#f04040'},
-    {l:'Enhancement', v:curCat.enhancement||0,  c:'#3d9eff'},
-    {l:'Mgn Upgrade', v:curCat.magento||0,      c:'#a94ff7'},
+    {l:'Bug Fix',     v:curCat.bugfix||0,       c:'#ff6b6b'},
+    {l:'Enhancement', v:curCat.enhancement||0,  c:'#60a5fa'},
+    {l:'Mgn Upgrade', v:curCat.magento||0,      c:'#c084fc'},
   ].map(x => `<div class="pbr" style="margin-bottom:14px">
     <div class="pbrl" style="width:100px;font-size:12px;color:var(--t2)">${x.l}</div>
     <div class="pbrt"><div class="pbrf" style="width:${(x.v/catTot*100).toFixed(0)}%;background:${x.c}"></div></div>
@@ -837,9 +861,9 @@ function renderMonthly() {
     const hR=rr>0?Math.max(Math.round((rr/mxH)*BH),4):0;
     return `<div class="bc-col" style="min-width:44px">
       <div class="bc-bars">
-        <div class="bc-bar" data-val="Allocated: ${m.allocated}" style="width:12px;height:${hA}px;background:linear-gradient(to top,#3d9eff,#7c8fff)"></div>
-        <div class="bc-bar" data-val="Consumed: ${m.consumed}" style="width:12px;height:${hC}px;background:linear-gradient(to top,#1fc966,#1fd3ee)"></div>
-        ${hR>0?`<div class="bc-bar" data-val="Remaining: ${rr}" style="width:12px;height:${hR}px;background:rgba(245,165,36,.18);border:1px dashed rgba(245,165,36,.6)"></div>`:''}
+        <div class="bc-bar" data-val="Allocated: ${m.allocated} hrs" style="width:12px;height:${hA}px;background:linear-gradient(to top,#3d9eff,#7c8fff)"></div>
+        <div class="bc-bar" data-val="Consumed: ${m.consumed} hrs" style="width:12px;height:${hC}px;background:linear-gradient(to top,#1fc966,#1fd3ee)"></div>
+        ${hR>0?`<div class="bc-bar" data-val="Remaining: ${rr} hrs" style="width:12px;height:${hR}px;background:rgba(245,165,36,.18);border:1px dashed rgba(245,165,36,.6)"></div>`:''}
       </div>
       <div class="bc-line"></div>
       <div class="bc-lbl">${m.date.replace('-','<br>')}</div>
@@ -854,9 +878,9 @@ function renderMonthly() {
     const hM=tot?Math.max(Math.round(((m.magento||0)/mxC)*100),(m.magento||0)>0?4:0):0;
     return `<div class="bc-col" style="min-width:44px">
       <div class="bc-bars">
-        ${hB>0?`<div class="bc-bar" data-val="Bug Fix: ${m.bugfix}" style="width:12px;height:${hB}px;background:#f04040"></div>`:''}
-        ${hE>0?`<div class="bc-bar" data-val="Enhancement: ${m.enhancement}" style="width:12px;height:${hE}px;background:#3d9eff"></div>`:''}
-        ${hM>0?`<div class="bc-bar" data-val="Magento: ${m.magento}" style="width:12px;height:${hM}px;background:#a94ff7"></div>`:''}
+        ${hB>0?`<div class="bc-bar" data-val="Bug Fix: ${m.bugfix} hrs" style="width:12px;height:${hB}px;background:#f04040"></div>`:''}
+        ${hE>0?`<div class="bc-bar" data-val="Enhancement: ${m.enhancement} hrs" style="width:12px;height:${hE}px;background:#3d9eff"></div>`:''}
+        ${hM>0?`<div class="bc-bar" data-val="Magento: ${m.magento} hrs" style="width:12px;height:${hM}px;background:#a94ff7"></div>`:''}
         ${tot===0?`<div class="bc-bar" data-val="No Hours" style="width:12px;height:4px;background:var(--s4)"></div>`:''}
       </div>
       <div class="bc-line"></div>
@@ -869,7 +893,7 @@ function renderMonthly() {
   $('mt-cards').innerHTML = [...merged].reverse().map(m => {
     const r2=Math.max(0,m.allocated-m.consumed);
     const p2=m.allocated?Math.round(m.consumed/m.allocated*100):0;
-    const bc=p2>=100?'#f04040':p2>80?'#f5a524':'#1fc966';
+    const bc=p2>=100?'#ff6b6b':p2>80?'#facc15':'#4ade80';
     return `<div class="mt-card${m.date===curDate?' cur-m':''}">
       <div class="mt-date">${m.date}${m.date===curDate?' <span class="b b-o" style="font-size:9px">NOW</span>':''}</div>
       <div class="mt-tot">${m.consumed}</div>
@@ -907,9 +931,9 @@ function renderHours() {
     const hR=m.remaining.crosby>0?Math.max(Math.round((m.remaining.crosby/mxH)*BH),4):0;
     return `<div class="bc-col" style="min-width:44px">
       <div class="bc-bars">
-        <div class="bc-bar" data-val="Crosby: ${m.total.crosby||0}" style="width:14px;height:${hC}px;background:linear-gradient(to top,#3d9eff,#7c8fff)"></div>
-        <div class="bc-bar" data-val="CP: ${m.total.cp||0}" style="width:14px;height:${hCP}px;background:linear-gradient(to top,#1fd3ee,#1fc966)"></div>
-        ${hR>0?`<div class="bc-bar" data-val="Remaining: ${m.remaining.crosby}" style="width:14px;height:${hR}px;background:rgba(61,158,255,.15);border:1px dashed rgba(61,158,255,.6)"></div>`:''}
+        <div class="bc-bar" data-val="Crosby: ${m.total.crosby||0} hrs" style="width:14px;height:${hC}px;background:linear-gradient(to top,#3d9eff,#7c8fff)"></div>
+        <div class="bc-bar" data-val="CP: ${m.total.cp||0} hrs" style="width:14px;height:${hCP}px;background:linear-gradient(to top,#1fd3ee,#1fc966)"></div>
+        ${hR>0?`<div class="bc-bar" data-val="Remaining: ${m.remaining.crosby} hrs" style="width:14px;height:${hR}px;background:rgba(61,158,255,.15);border:1px dashed rgba(61,158,255,.6)"></div>`:''}
       </div>
       <div class="bc-line"></div>
       <div class="bc-lbl">${m.name.slice(0,3)}</div>
@@ -955,7 +979,6 @@ function renderUpgrade() {
   const tDone = m.tasks.filter(t=>(t.status||'').toLowerCase().includes('done')||(t.status||'').toLowerCase().includes('complet')).length;
   const overallProgress = m.totalAlloc ? Math.round((m.totalCons / m.totalAlloc) * 100) : 0;
   
-  // Safe filtering variables
   let wkOptions = '<option value="all">All Weeks</option>';
   let phOptions = '<option value="all">All Phases</option>';
   let stOptions = '<option value="all">All Statuses</option>';
@@ -970,19 +993,17 @@ function renderUpgrade() {
       allStatuses.forEach(s => { stOptions += '<option value="' + s + '">' + s + '</option>'; });
   }
 
-  // Overview Counts
   const doneCount = m.tasks.filter(t => t.status.toLowerCase().includes('done') || t.status.toLowerCase().includes('complet')).length;
   const processCount = m.tasks.filter(t => t.status.toLowerCase().includes('process')).length;
   const pendingCount = m.tasks.filter(t => t.status.toLowerCase().includes('pending')).length;
 
-  // Active Tasks Focus
   const activeTasks = m.tasks.filter(t => t.status.toLowerCase().includes('process'));
   let activeHTML = activeTasks.slice(0, 5).map(t =>
-    `<div style="font-size:12px;color:var(--t2);display:flex;gap:8px;line-height:1.4">
+    `<div style="font-size:12.5px;color:var(--t2);display:flex;gap:8px;line-height:1.4">
       <span style="color:var(--blue);flex-shrink:0;font-weight:bold">›</span><b style="color:var(--t1)">${t.title}</b> <span style="opacity:0.7">(${t.phase} - ${t.week})</span>
     </div>`
   ).join('');
-  if(activeTasks.length === 0) activeHTML = `<div style="font-size:12px;color:var(--t3);font-weight:600">No tasks currently in process.</div>`;
+  if(activeTasks.length === 0) activeHTML = `<div style="font-size:12.5px;color:var(--t3);font-weight:600">No tasks currently in process.</div>`;
 
   const html = `
     <div class="kgrid" id="up-kpis">
@@ -1048,13 +1069,13 @@ function renderUpgrade() {
           <span class="b b-bl">${processCount} In Process</span>
           <span class="b b-o">${pendingCount} Pending</span>
           <div style="width:2px;height:18px;background:var(--bd);margin:0 6px"></div>
-          <select id="mg-wk" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t1);font-size:12px;padding:6px 12px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
+          <select id="mg-wk" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t1);font-size:12.5px;padding:6px 12px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
             ${wkOptions}
           </select>
-          <select id="mg-ph" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t1);font-size:12px;padding:6px 12px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
+          <select id="mg-ph" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t1);font-size:12.5px;padding:6px 12px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
             ${phOptions}
           </select>
-          <select id="mg-st" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t1);font-size:12px;padding:6px 12px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
+          <select id="mg-st" onchange="window.filterMagentoTasks()" style="background:var(--s3);border:1px solid var(--bd);color:var(--t1);font-size:12.5px;padding:6px 12px;border-radius:var(--rs);font-family:var(--fn);cursor:pointer;outline:none;font-weight:600">
             ${stOptions}
           </select>
         </div>
@@ -1119,7 +1140,12 @@ async function loadAll(manual=false) {
     allTasks = FB.tasks;
   }
 
-  renderOv(); renderTasks(); renderMonthly(); renderHours(); renderUpgrade();
+  // Ensure sections are rendered properly in order without overriding undefined DOM elements
+  renderOv(); 
+  renderTasks(); 
+  renderMonthly(); 
+  renderHours(); 
+  renderUpgrade();
 
   const now = new Date();
   if (liveOk) {
